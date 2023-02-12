@@ -25,12 +25,70 @@ button {
     border-radius: 50%;
 }
 
+.vuz-logo {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    background: #ffffff;
+    border-radius: 50%;
+
+    img {
+        object-fit: contain;
+    }
+}
+
 .headline {
     @extend %flex-center;
     font-size: min(7vw, 48px);
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     color: #EEF8FB;
+}
+
+.ping-bar {
+    @extend %flex-center;
+    flex-direction: column;
+    border: 2px solid #2E4984;
+    gap: 3px;
+    border-radius: 10px;
+}
+
+.ping-bar__state {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+
+//для скрытия переполнения ячеек
+.ping-bar,
+.ping-bar__state {
+    overflow-x: hidden;
+}
+
+.green {
+    background-color: #3BA55C;
+}
+
+.yellow {
+    background-color: #A59A3B;
+}
+
+.red {
+    background-color: #A53B3B;
+}
+
+.uptime,
+.reports {
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+
+    span:first-child {
+        color: #7F8CA9;
+    }
+
+    span:last-child {
+        color: #ffffff;
+    }
 }
 
 // header
@@ -319,6 +377,7 @@ main {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 32px;
         color: #EEF8FB;
     }
 
@@ -335,49 +394,18 @@ main {
         }
     }
 
-    .menu__logo {
-        background: #ffffff;
-        padding: 0px 7.5px;
-        border-radius: 50px;
-    }
-
-    // пинг бар
-
-    .menu__ping-bar {
-        @extend %flex-center;
-        flex-direction: column;
-        border: 2px solid #2E4984;
-        gap: 3px;
-        border-radius: 10px;
-        padding: 10px;
-    }
-
-    .menu__state {
-        display: flex;
-        gap: 3px;
+    .vuz-logo {
+        width: 100px;
+        height: 100px;
     }
 
     .ping-bar {
-        width: 10px;
+        padding: 10px;
+    }
+
+    .ping-bar__item {
+        width: min(1.2vw, 10px);
         height: 40px;
-    }
-
-    //для скрытия переполнения ячеек
-    .menu__ping-bar,
-    .menu__state {
-        overflow-x: hidden;
-    }
-
-    .green {
-        background-color: #3BA55C;
-    }
-
-    .yellow {
-        background-color: #A59A3B;
-    }
-
-    .red {
-        background-color: #A53B3B;
     }
 
     .line {
@@ -385,19 +413,6 @@ main {
         width: min(53vw, 340px);
         margin-top: 10px;
         background-color: #2E4984;
-    }
-
-    .menu__uptime {
-        font-family: 'Raleway', sans-serif;
-        font-size: 11px;
-
-        span:first-child {
-            color: #7F8CA9;
-        }
-
-        span:last-child {
-            color: #ffffff;
-        }
     }
 
     .menu__buttons {
@@ -457,6 +472,14 @@ main {
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
+    }
+
+    .avatar {
+        justify-content: start;
+    }
+
+    .avatar-icon {
+        margin-right: 5px;
     }
 
     .cabinet__private-info,
@@ -638,6 +661,140 @@ main {
         margin: 24px 13px;
         color: #ED4546;
         text-align: center;
+    }
+}
+
+// посмотрим на вуз поближе..
+
+.monitoring {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 50px min(6vw, 160px);
+    padding: 50px min(3vw, 120px);
+    background-color: #001A29;
+    color: #EEF8FB;
+    border-radius: 50px;
+    font-family: "Montserrat", sans-serif;
+
+    .monitoring__info {
+        min-width: 310px;
+        margin-right: min(10vw, 120px);
+    }
+
+    .vuz-logo {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    .monitoring__name {
+        font-family: "Mukta", sans-serif;
+        font-size: 32px;
+    }
+
+    .monitoring__rate,
+    .monitoring__region,
+    .monitoring__time {
+        span:first-child {
+            font-size: 18px;
+            color: #7F8CA9;
+        }
+
+        span:last-child {
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+
+    .monitoring__buttons {
+        display: flex;
+        flex-direction: column;
+        margin: 24px 0;
+
+        button {
+            padding: 0px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            color: #EEF8FB;
+        }
+
+        .monitoring__problem {
+            width: fit-content;
+            height: 48px;
+            margin-bottom: 20px;
+            background-color: #ED4546;
+        }
+
+        .monitoring__report {
+            width: fit-content;
+            height: 48px;
+            background-color: #D09C17;
+
+        }
+    }
+
+    .monitoring__ping-answer,
+    .monitoring__ping-report {
+        &>span:first-child {
+            font-family: "Mukta", sans-serif;
+            font-size: 32px;
+            padding: 0 min(3vw, 24px);
+        }
+    }
+
+    .monitoring__ping-bars {
+        background: #002033;
+        box-shadow: 0px 2px 2px rgba(0, 32, 51, 0.02), 0px 2px 8px rgba(0, 32, 51, 0.16);
+        border-radius: 4px;
+    }
+
+
+    .ping-bar {
+        margin: 0 min(3vw, 24px);
+        padding: 24px min(1.5vw, 64px) 10px min(1.5vw, 64px);
+    }
+
+    .ping-bar__state {
+        max-width: 672px;
+        width: 40vw;
+    }
+
+    .ping-bar,
+    .ping-bar__state {
+        overflow-x: auto;
+    }
+
+    @media (max-width:633px) {
+        .ping-bar__state {
+            padding-left: 5px;
+        }
+    }
+
+    .ping-bar__item {
+        width: min(1vw, 14px);
+        height: 80px;
+
+        @media (max-width:900px) {
+            height: 40px;
+        }
+
+        @media (max-width:1200px) {
+            height: 60px;
+        }
+    }
+
+    .line {
+        max-width: 680px;
+        width: 41vw;
+        height: 2px;
+        margin-top: 17px;
+        background-color: #2E4984;
+    }
+
+    .uptime,
+    .reports {
+        height: 28px;
     }
 }
 

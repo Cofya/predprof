@@ -1,4 +1,4 @@
-.menu .menu__buttons button:last-child, .menu .menu__buttons button:nth-child(2), .menu .menu__buttons button:first-child, .menu .menu__buttons, .menu .menu__ping-bar, .menu .menu__list, .menu .menu__headline, [class^=reg-menu__], .reg-menu, .recommendation .recommendation__table, .recommendation, .avatar, .logo, .headline {
+.menu .menu__buttons button:last-child, .menu .menu__buttons button:nth-child(2), .menu .menu__buttons button:first-child, .menu .menu__buttons, .menu .menu__list, .menu .menu__headline, [class^=reg-menu__], .reg-menu, .recommendation .recommendation__table, .recommendation, .avatar, .logo, .ping-bar, .headline {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,11 +31,79 @@ button {
   border-radius: 50%;
 }
 
+.vuz-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+.vuz-logo img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .headline {
   font-size: min(7vw, 48px);
   font-family: "Montserrat", sans-serif;
   text-align: center;
   color: #EEF8FB;
+}
+
+.ping-bar {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 2px solid #2E4984;
+  gap: 3px;
+  border-radius: 10px;
+}
+
+.ping-bar__state {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 3px;
+}
+
+.ping-bar,
+.ping-bar__state {
+  overflow-x: hidden;
+}
+
+.green {
+  background-color: #3BA55C;
+}
+
+.yellow {
+  background-color: #A59A3B;
+}
+
+.red {
+  background-color: #A53B3B;
+}
+
+.uptime,
+.reports {
+  font-family: "Raleway", sans-serif;
+  font-size: 11px;
+}
+.uptime span:first-child,
+.reports span:first-child {
+  color: #7F8CA9;
+}
+.uptime span:last-child,
+.reports span:last-child {
+  color: #ffffff;
 }
 
 header {
@@ -319,6 +387,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 32px;
   color: #EEF8FB;
 }
 .menu .menu__name {
@@ -330,59 +399,22 @@ main {
   color: #7F8CA9;
   font-size: 11px;
 }
-.menu .menu__logo {
-  background: #ffffff;
-  padding: 0px 7.5px;
-  border-radius: 50px;
-}
-.menu .menu__ping-bar {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border: 2px solid #2E4984;
-  gap: 3px;
-  border-radius: 10px;
-  padding: 10px;
-}
-.menu .menu__state {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 3px;
+.menu .vuz-logo {
+  width: 100px;
+  height: 100px;
 }
 .menu .ping-bar {
-  width: 10px;
+  padding: 10px;
+}
+.menu .ping-bar__item {
+  width: min(1.2vw, 10px);
   height: 40px;
-}
-.menu .menu__ping-bar,
-.menu .menu__state {
-  overflow-x: hidden;
-}
-.menu .green {
-  background-color: #3BA55C;
-}
-.menu .yellow {
-  background-color: #A59A3B;
-}
-.menu .red {
-  background-color: #A53B3B;
 }
 .menu .line {
   height: 1.5px;
   width: min(53vw, 340px);
   margin-top: 10px;
   background-color: #2E4984;
-}
-.menu .menu__uptime {
-  font-family: "Raleway", sans-serif;
-  font-size: 11px;
-}
-.menu .menu__uptime span:first-child {
-  color: #7F8CA9;
-}
-.menu .menu__uptime span:last-child {
-  color: #ffffff;
 }
 .menu .menu__buttons {
   padding-top: 15px;
@@ -447,6 +479,14 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+.cabinet .avatar {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+.cabinet .avatar-icon {
+  margin-right: 5px;
 }
 .cabinet .cabinet__private-info,
 .cabinet .cabinet__contacts {
@@ -653,6 +693,133 @@ main {
   margin: 24px 13px;
   color: #ED4546;
   text-align: center;
+}
+
+.monitoring {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin: 50px min(6vw, 160px);
+  padding: 50px min(3vw, 120px);
+  background-color: #001A29;
+  color: #EEF8FB;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+}
+.monitoring .monitoring__info {
+  min-width: 310px;
+  margin-right: min(10vw, 120px);
+}
+.monitoring .vuz-logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+.monitoring .monitoring__name {
+  font-family: "Mukta", sans-serif;
+  font-size: 32px;
+}
+.monitoring .monitoring__rate span:first-child,
+.monitoring .monitoring__region span:first-child,
+.monitoring .monitoring__time span:first-child {
+  font-size: 18px;
+  color: #7F8CA9;
+}
+.monitoring .monitoring__rate span:last-child,
+.monitoring .monitoring__region span:last-child,
+.monitoring .monitoring__time span:last-child {
+  font-size: 24px;
+  font-weight: 700;
+}
+.monitoring .monitoring__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 24px 0;
+}
+.monitoring .monitoring__buttons button {
+  padding: 0px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  color: #EEF8FB;
+}
+.monitoring .monitoring__buttons .monitoring__problem {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 48px;
+  margin-bottom: 20px;
+  background-color: #ED4546;
+}
+.monitoring .monitoring__buttons .monitoring__report {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 48px;
+  background-color: #D09C17;
+}
+.monitoring .monitoring__ping-answer > span:first-child,
+.monitoring .monitoring__ping-report > span:first-child {
+  font-family: "Mukta", sans-serif;
+  font-size: 32px;
+  padding: 0 min(3vw, 24px);
+}
+.monitoring .monitoring__ping-bars {
+  background: #002033;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 32, 51, 0.02), 0px 2px 8px rgba(0, 32, 51, 0.16);
+          box-shadow: 0px 2px 2px rgba(0, 32, 51, 0.02), 0px 2px 8px rgba(0, 32, 51, 0.16);
+  border-radius: 4px;
+}
+.monitoring .ping-bar {
+  margin: 0 min(3vw, 24px);
+  padding: 24px min(1.5vw, 64px) 10px min(1.5vw, 64px);
+}
+.monitoring .ping-bar__state {
+  max-width: 672px;
+  width: 40vw;
+}
+.monitoring .ping-bar,
+.monitoring .ping-bar__state {
+  overflow-x: auto;
+}
+@media (max-width: 633px) {
+  .monitoring .ping-bar__state {
+    padding-left: 5px;
+  }
+}
+.monitoring .ping-bar__item {
+  width: min(1vw, 14px);
+  height: 80px;
+}
+@media (max-width: 900px) {
+  .monitoring .ping-bar__item {
+    height: 40px;
+  }
+}
+@media (max-width: 1200px) {
+  .monitoring .ping-bar__item {
+    height: 60px;
+  }
+}
+.monitoring .line {
+  max-width: 680px;
+  width: 41vw;
+  height: 2px;
+  margin-top: 17px;
+  background-color: #2E4984;
+}
+.monitoring .uptime,
+.monitoring .reports {
+  height: 28px;
 }
 
 .show {
