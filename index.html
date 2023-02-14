@@ -42,12 +42,17 @@
             </div>
         </div>
         <div class="menu-buttons">
-            <span class="menu_buttons__main active">Главная</span>
-            <span class="menu_buttons__cabinet">Личный кабинет</span>
+            <div class="menu-buttons__wrapper">
+                <span class="menu-buttons__main active" onclick="toMain()">Главная</span>
+                <span class="menu-buttons__cabinet" onclick="toCabinet()">Личный кабинет</span>
+            </div>
+            <div class="line-wrapper">
+                <div class="line"></div>
+            </div>
         </div>
         <div class="reg-buttons">
-            <button class="reg-buttons-entry">Войти</button>
-            <button class="reg-buttons-registration">Регистрация</button>
+            <button class="reg-buttons-entry" onclick="toEntry()">Войти</button>
+            <button class="reg-buttons-registration" onclick="toReg()">Регистрация</button>
         </div>
         <div class="avatar show">
             <img src="images/icon.png" alt="ава" class="avatar-icon" width="64px" height="64px">
@@ -58,23 +63,6 @@
         </div>
     </header>
     <main>
-        <div class="reg-menu">
-            <div class="reg-menu__registration">
-                <span>Регистрация</span>
-                <input type="text" id="reg-login" placeholder="Логин">
-                <input type="text" id="reg-email" placeholder="Почта">
-                <input type="text" id="reg-password" placeholder="Пароль">
-                <button>Зарегистрироваться</button>
-                <span onclick="switchReg()">Уже зарегистрировались?</span>
-            </div>
-            <div class="reg-menu__entry show">
-                <span>Вход</span>
-                <input type="text" id="entry-login" placeholder="Логин">
-                <input type="text" id="entry-password" placeholder="Пароль">
-                <button>Войти</button>
-                <span onclick="switchReg()">Регистрация</span>
-            </div>
-        </div>
         <div class="recommendation">
             <span class="headline">ПОПУЛЯРНЫЕ РЕСУРСЫ</span>
             <div class="recommendation__table">
@@ -210,7 +198,7 @@
                             </svg>
 
                         </button>
-                        <button>ПЕРЕЙТИ</button>
+                        <button class="menu__go">ПЕРЕЙТИ</button>
                         <button>
                             <svg width="18" height="22" viewBox="0 0 18 22" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -261,7 +249,7 @@
                             </svg>
 
                         </button>
-                        <button>ПЕРЕЙТИ</button>
+                        <button class="menu__go">ПЕРЕЙТИ</button>
                         <button>
                             <svg width="18" height="22" viewBox="0 0 18 22" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -318,7 +306,7 @@
                             </svg>
 
                         </button>
-                        <button>ПЕРЕЙТИ</button>
+                        <button class="menu__go">ПЕРЕЙТИ</button>
                         <button>
                             <svg width="18" height="22" viewBox="0 0 18 22" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -332,7 +320,7 @@
                 </div>
             </div>
         </div>
-        <section class="vuz-all-info">
+        <section class="vuz-all-info show">
             <div class="monitoring">
                 <div class="monitoring__info">
                     <div class="vuz-logo">
@@ -474,13 +462,16 @@
                     </div>
                     <div class="comment__buttons">
                         <div class="dropdown">
-                            <input type="button" class="dropbtn" value="Выберите оценку" onclick="markDrop()">
+                            <div class="dropbtn-wrapper" onclick="markDrop()">
+                                <input type="button" class="dropbtn" value="Выберите оценку">
+                                <img src="images/drop.svg" alt="" class="dropbtn-image">
+                            </div>
                             <div id="dropdown__mark" class="dropdown-content show">
-                                <span>5 звёзд</span>
-                                <span>4 звёзды</span>
-                                <span>3 звёзды</span>
-                                <span>2 звёзды</span>
-                                <span>1 звёзда</span>
+                                <span onclick="setMark('5')">5 звёзд</span>
+                                <span onclick="setMark('4')">4 звёзды</span>
+                                <span onclick="setMark('3')">3 звёзды</span>
+                                <span onclick="setMark('2')">2 звёзды</span>
+                                <span onclick="setMark('1')">1 звёзда</span>
                             </div>
                         </div>
 
@@ -528,7 +519,7 @@
                 </div>
             </div>
         </section>
-        <div class="cabinet">
+        <div class="cabinet show">
             <section>
                 <div class="avatar">
                     <img src="images/icon.png" alt="ава" width="100" height="100" class="avatar-icon">
@@ -728,7 +719,23 @@
         </div>
     </main>
     <footer>
-
+        <div class="reg-menu show">
+            <div class="reg-menu__registration">
+                <span>Регистрация</span>
+                <input type="text" id="reg-login" placeholder="Логин">
+                <input type="text" id="reg-email" placeholder="Почта">
+                <input type="text" id="reg-password" placeholder="Пароль">
+                <button>Зарегистрироваться</button>
+                <span onclick="switchReg()">Уже зарегистрировались?</span>
+            </div>
+            <div class="reg-menu__entry show">
+                <span>Вход</span>
+                <input type="text" id="entry-login" placeholder="Логин">
+                <input type="text" id="entry-password" placeholder="Пароль">
+                <button>Войти</button>
+                <span onclick="switchReg()">Регистрация</span>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

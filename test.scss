@@ -9,6 +9,12 @@
     margin: 0px;
 }
 
+html {
+    width: 100%;
+    height: 100%;
+    background-color: #002033;
+}
+
 span,
 h1,
 h2,
@@ -96,31 +102,60 @@ button {
     display: inline-block;
 }
 
-.dropdown-content {
-    position: absolute;
-    background-color: #002033;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+.dropbtn-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 300px / 16px * 1rem;
+    cursor: pointer;
+    border: 1px solid rgba(246, 251, 253, 0.16);
+    border-radius: 4px;
+    background-color: #0C2B3D;
 
-    span {
-        display: block;
-        padding-left: 10px / 16px * 1rem;
-        margin: 10px / 16px * 1rem;
-        color: #EEF8FB;
+    img {
+        padding: 1.3125rem 1.22rem;
+        transition: 0.3s all linear;
+    }
 
-        &:hover {
-            background-color: rgba(246, 251, 253, 0.23);
-        }
+    .active {
+        transform: rotate(-90deg);
     }
 }
 
 .dropbtn {
     width: 276px / 16px * 1rem;
     height: 48px / 16px * 1rem;
-    border: none;
+    padding-left: 13px;
     cursor: pointer;
+    font-size: 18px / 16px * 1rem;
+    text-align: left;
+    border: none;
+    border-right: 1px solid rgba(246, 251, 253, 0.16);
     background-color: #0C2B3D;
-    color: #EEF8FB;
+    color: rgba(246, 251, 253, 0.35);
+}
+
+.dropdown-content {
+    width: 100%;
+    position: absolute;
+    font-size: 18px / 16px * 1rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #002033;
+    border: 1px solid rgba(246, 251, 253, 0.16);
+    box-shadow: 0px 4px 4px rgba(0, 3, 6, 0.08), 0px 8px 24px rgba(0, 3, 6, 0.32);
+    border-radius: 4px;
+    z-index: 1;
+
+    span {
+        display: block;
+        padding: 0.625rem 0.625rem 0.625rem 1.25rem;
+        margin: 10px / 16px * 1rem 0px;
+        color: #EEF8FB;
+        transition: 0.5s all ease-in-out;
+
+        &:hover {
+            background-color: rgba(246, 251, 253, 0.23);
+        }
+    }
 }
 
 // header
@@ -197,14 +232,88 @@ header {
 }
 
 .menu-buttons {
+    display: grid;
+    grid-template-areas:
+        "main cabinet"
+        "line line ";
     color: rgba(246, 251, 253, 0.6);
 
-    .active {
-        color: #EEF8FB
+    .menu-buttons__wrapper {
+        display: grid;
+        grid-template-areas:
+            "main cabinet";
+        height: 35px / 16px *1rem;
     }
 
-    .menu_buttons__main {
+    .menu-buttons__main {
+        height: 20px / 16px * 1rem;
+        grid-area: main;
         padding-right: 1rem;
+        margin: auto;
+        transition: 0.3s all ease-in;
+    }
+
+    .menu-buttons__cabinet {
+        width: 140px / 16px * 1rem;
+        height: 20px / 16px * 1rem;
+        grid-area: cabinet;
+        margin: auto;
+        transition: 0.3s all ease;
+    }
+
+    .active {
+        height: 35px / 16px *1rem;
+        color: #EEF8FB;
+
+    }
+
+    .line-wrapper {
+        grid-area: line;
+
+        .line {
+            width: 40px / 16px * 1rem;
+            height: 4px / 16px *1rem;
+            margin-left: 12.5px / 16px * 1rem;
+            border-radius: 4px 4px 0px 0px;
+            background-color: #0F9FFF;
+
+            // animation-name: line-cabinet;
+            animation-duration: 1.2s;
+            animation-timing-function: ease-in-out;
+
+        }
+
+        .active {
+            margin-left: 130px / 16px * 1rem;
+        }
+
+        @keyframes line-cabinet {
+            0% {
+                margin-left: 12.5px / 16px * 1rem;
+            }
+
+            20% {
+                margin-left: 2px / 16px * 1rem;
+            }
+
+            100% {
+                margin-left: 130px / 16px * 1rem;
+            }
+        }
+
+        @keyframes line-main {
+            0% {
+                margin-left: 130px / 16px * 1rem;
+            }
+
+            20% {
+                margin-left: 140.5px / 16px * 1rem;
+            }
+
+            100% {
+                margin-left: 12.5px / 16px * 1rem;
+            }
+        }
     }
 }
 
@@ -419,6 +528,10 @@ main {
 
     .ping-bar {
         padding: 10px / 16px * 1rem;
+    }
+
+    .ping-bar__state {
+        height: 40px / 16px * 1rem;
     }
 
     .ping-bar__item {
@@ -901,6 +1014,11 @@ main {
     }
 }
 
+
+footer {
+    background-color: #002033;
+}
+
 .show {
     display: none !important;
 }
@@ -910,12 +1028,7 @@ main {
 
 @media (min-width:2200px) {
     html {
-        width: 100% !important;
-        ;
-        height: 100% !important;
-        ;
         font-size: calc(16px + 0.2vw) !important;
-        ;
     }
 }
 
@@ -926,24 +1039,20 @@ main {
 
     .cabinet {
         flex-direction: column !important;
-        ;
 
         .cabinet__forms {
             flex-direction: column !important;
-            ;
         }
-    }
 
-    .monitoring .ping-bar__item {
-        height: 60px !important;
-        ;
+        .monitoring .ping-bar__item {
+            height: 60px !important;
+        }
     }
 }
 
 @media (max-width:992px) {
     .monitoring .ping-bar__item {
         height: 40px !important;
-        ;
     }
 
     .comment__textarea-write {
@@ -951,34 +1060,71 @@ main {
     }
 }
 
+@mixin widthLess767 {
+
+    .menu-buttons {
+        .menu-buttons__wrapper {
+            display: grid;
+            grid-template-areas:
+                "main"
+                "cabinet";
+        }
+
+        .menu-buttons__main {
+            grid-area: main;
+            margin-bottom: 10px / 16px * 1rem;
+        }
+
+        .menu-buttons__cabinet {
+            grid-area: cabinet;
+        }
+
+        .active {
+            height: 20px / 16px * 1rem;
+            color: #EEF8FB;
+
+        }
+
+        .line {
+            display: none;
+        }
+    }
+}
+
+.reg-buttons {
+    flex-direction: column !important;
+}
+
+.reg-buttons .reg-buttons-registration {
+    display: none !important;
+}
+
+.menu {
+    margin: 0 !important;
+}
+
+.monitoring .ping-bar__state {
+    padding-left: 5px / 16px * 1rem !important;
+    ;
+
+}
+
+.cabinet * {
+    margin-right: 0 !important;
+}
+
 @media (max-width: 767px) {
+    @include widthLess767;
+
     .logo {
         padding-right: 10px !important;
-        ;
     }
+}
 
-    .menu-buttons,
-    .reg-buttons {
-        flex-direction: column !important;
-        ;
-    }
+@media (max-width: 480px) {
+    @include widthLess767;
 
-    .reg-buttons .reg-buttons-registration {
-        display: none !important;
-        ;
-    }
-
-    .menu {
-        margin: 0 !important;
-    }
-
-    .monitoring .ping-bar__state {
-        padding-left: 5px / 16px * 1rem !important;
-        ;
-
-    }
-
-    .cabinet * {
-        margin-right: 0 !important;
+    .logo__icon {
+        display: none;
     }
 }
