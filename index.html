@@ -49,11 +49,13 @@
             <button class="reg-buttons-entry">Войти</button>
             <button class="reg-buttons-registration">Регистрация</button>
         </div>
-        <div class="avatar">
+        <div class="avatar show">
             <img src="images/icon.png" alt="ава" class="avatar-icon" width="64px" height="64px">
             <div class="avatar-name">Гоба</div>
         </div>
-        <input type="search" placeholder="Я ищу" class="">
+        <div class="search-wrapper">
+            <input type="search" placeholder="Я ищу" class="">
+        </div>
     </header>
     <main>
         <div class="reg-menu">
@@ -330,142 +332,202 @@
                 </div>
             </div>
         </div>
-
-        <div class="monitoring">
-            <div class="monitoring__info">
-                <div class="vuz-logo">
-                    <img src="images/bauman.png" alt="лого вуза">
-                </div>
-                <div class="monitoring__name">
-                    <span>МГТУ ИМ. БАУМАНА</span>
-                </div>
-                <div class="monitoring__rate">
-                    <span>рейтинг: </span>
-                    <span>4.9</span>
-                </div>
-                <div class="monitoring__region">
-                    <span>регион: </span>
-                    <span>Москва</span>
-                </div>
-                <div class="monitoring__time">
-                    <span>последний пинг: </span>
-                    <span>22:29</span>
-                </div>
-                <div class="monitoring__buttons">
-                    <button class="monitoring__problem">СООБЩИТЬ О ПРОБЛЕМЕ</button>
-                    <button class="monitoring__report">СКАЧАТЬ ОТЧЁТ</button>
-                </div>
-            </div>
-
-            <div class="monitoring__ping-bars">
-                <div class="monitoring__ping-answer">
-                    <span>ВРЕМЯ ОТВЕТА</span>
-                    <div class="ping-bar">
-                        <div class="ping-bar__state">
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item yellow"></div>
-                            <div class="ping-bar__item red"></div>
-                            <div class="ping-bar__item yellow"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                        </div>
-                        <div class="line"></div>
-                        <div class="uptime">
-                            <span>uptime:</span>
-                            <span>96%</span>
-                        </div>
+        <section class="vuz-all-info">
+            <div class="monitoring">
+                <div class="monitoring__info">
+                    <div class="vuz-logo">
+                        <img src="images/bauman.png" alt="лого вуза">
                     </div>
-                </div>
-                <div class="monitoring__ping-report">
-                    <span>ЖАЛОБЫ</span>
-                    <div class="ping-bar">
-                        <div class="ping-bar__state">
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item yellow"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                            <div class="ping-bar__item green"></div>
-                        </div>
-                        <div class="line"></div>
-                        <div class="reports">
-                            <span>reports:</span>
-                            <span>98%</span>
-                        </div>
+                    <div class="monitoring__name">
+                        <span>МГТУ ИМ. БАУМАНА</span>
+                    </div>
+                    <div class="monitoring__rate">
+                        <span>рейтинг: </span>
+                        <span>4.9</span>
+                    </div>
+                    <div class="monitoring__region">
+                        <span>регион: </span>
+                        <span>Москва</span>
+                    </div>
+                    <div class="monitoring__time">
+                        <span>последний пинг: </span>
+                        <span>22:29</span>
+                    </div>
+                    <div class="monitoring__buttons">
+                        <button class="monitoring__problem">СООБЩИТЬ О ПРОБЛЕМЕ</button>
+                        <button class="monitoring__report">СКАЧАТЬ ОТЧЁТ</button>
                     </div>
                 </div>
 
-            </div>
-        </div>
+                <div class="monitoring__ping-bars">
+                    <div class="monitoring__ping-answer">
+                        <span>ВРЕМЯ ОТВЕТА</span>
+                        <div class="ping-bar">
+                            <div class="ping-bar__state">
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item yellow"></div>
+                                <div class="ping-bar__item red"></div>
+                                <div class="ping-bar__item yellow"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="uptime">
+                                <span>uptime:</span>
+                                <span>96%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="monitoring__ping-report">
+                        <span>ЖАЛОБЫ</span>
+                        <div class="ping-bar">
+                            <div class="ping-bar__state">
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item yellow"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="reports">
+                                <span>reports:</span>
+                                <span>98%</span>
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+            <div class="comment">
+                <div class="comment__write">
+                    <div class="comment__textarea">
+                        <textarea class="comment__textarea-write" placeholder="Введите текст сообщения"></textarea>
+                    </div>
+                    <div class="comment__buttons">
+                        <div class="dropdown">
+                            <input type="button" class="dropbtn" value="Выберите оценку" onclick="markDrop()">
+                            <div id="dropdown__mark" class="dropdown-content show">
+                                <span>5 звёзд</span>
+                                <span>4 звёзды</span>
+                                <span>3 звёзды</span>
+                                <span>2 звёзды</span>
+                                <span>1 звёзда</span>
+                            </div>
+                        </div>
+
+                        <button class="comment__send">ОТПРАВИТЬ</button>
+                    </div>
+                </div>
+
+                <div class="comment__users">
+                    <div class="comment__comment">
+                        <div class="comment__user">
+                            <div class="comment__user-avatar">
+                                <img src="images/icon.png" alt="">
+                            </div>
+                            <div class="comment__user-info">
+                                <div class="comment__user-name">
+                                    <span>Денис</span>
+                                </div>
+                                <div class="comment__user-mark">
+                                    <span>Оценка:</span>
+                                    <span>5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment__user-text">
+                            <span>жоское бла бла бла</span>
+                        </div>
+                        <div class="comment__user">
+                            <div class="comment__user-avatar">
+                                <img src="images/icon.png" alt="">
+                            </div>
+                            <div class="comment__user-info">
+                                <div class="comment__user-name">
+                                    <span>Денис</span>
+                                </div>
+                                <div class="comment__user-mark">
+                                    <span>Оценка:</span>
+                                    <span>5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment__user-text">
+                            <span>жоское бла бла бла</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <div class="cabinet">
             <section>
                 <div class="avatar">
@@ -526,6 +588,7 @@
                     </div>
                 </div>
             </section>
+
             <div class="cabinet__sub">
                 <div class="cabinet__headlines">Мои подписки</div>
                 <div class="cabinet__sub-menu">

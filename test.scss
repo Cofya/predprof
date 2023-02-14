@@ -28,7 +28,7 @@ button {
 .vuz-logo {
     display: flex;
     justify-content: center;
-    margin: 10px;
+    margin: 10px / 16px *1rem;
     background: #ffffff;
     border-radius: 50%;
 
@@ -39,7 +39,7 @@ button {
 
 .headline {
     @extend %flex-center;
-    font-size: min(7vw, 48px);
+    font-size: min(7vw, 3rem);
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     color: #EEF8FB;
@@ -80,7 +80,7 @@ button {
 .uptime,
 .reports {
     font-family: 'Raleway', sans-serif;
-    font-size: 11px;
+    font-size: 11px / 16px *1rem;
 
     span:first-child {
         color: #7F8CA9;
@@ -91,24 +91,68 @@ button {
     }
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #002033;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    span {
+        display: block;
+        padding-left: 10px / 16px * 1rem;
+        margin: 10px / 16px * 1rem;
+        color: #EEF8FB;
+
+        &:hover {
+            background-color: rgba(246, 251, 253, 0.23);
+        }
+    }
+}
+
+.dropbtn {
+    width: 276px / 16px * 1rem;
+    height: 48px / 16px * 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #0C2B3D;
+    color: #EEF8FB;
+}
+
 // header
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    height: 90px / 16px * 1rem;
     background-color: #001A29;
     gap: 10px;
 
+    .search-wrapper {
+        margin-right: 0.5%;
+    }
+
     input {
+        width: 100%;
+        max-width: 260px / 16px * 1rem;
+        height: 40px / 16px * 1rem;
+        padding-left: 20px / 16px * 1rem;
         border: none;
         border: 1px solid rgba(246, 251, 253, 0.44);
         border-radius: 4px;
-        margin-right: 10px;
         background-color: #002033;
-        padding-left: 20px;
-        color: rgba(246, 251, 253, 0.35);
+        color: #EEF8FB;
+        outline: 0;
+        outline-offset: 0;
+
+        &::placeholder {
+            color: rgba(246, 251, 253, 0.35);
+        }
     }
 }
 
@@ -116,42 +160,30 @@ header {
     @extend %flex-center;
     flex-wrap: nowrap;
 
-    @media (max-width:700px) {
-        padding-right: 10px;
-    }
-
     .logo__icon {
-        width: 60px;
-        height: 60px;
+        width: 3.75rem;
+        height: 3.75rem;
     }
 
     .logo__text {
 
         span:first-child {
             display: inline-block;
-            height: 58px;
-            font-size: 48px;
-            line-height: 75px;
+            height: 58px / 16px * 1rem;
+            font-size: 48px / 16px * 1rem;
+            line-height: 75px / 16px * 1rem;
             font-family: 'Mukta', sans-serif;
             font-style: normal;
             letter-spacing: 0.7vw;
             color: #EEF8FB;
-
-            @media (max-width:1100px) {
-                display: none;
-            }
         }
 
         span:last-child {
             display: inline-block;
-            height: 20px;
+            height: 20px / 16px * 1rem;
             color: #006AA9;
             font-family: 'Montserrat', sans-serif;
-            padding-left: 12px;
-
-            @media (max-width:1100px) {
-                display: none;
-            }
+            padding-left: 12px / 16px * 1rem;
         }
     }
 }
@@ -162,10 +194,6 @@ header {
     flex-direction: row;
     color: #EEF8FB;
     font-family: 'Montserrat', sans-serif;
-
-    @media (max-width: 700px) {
-        flex-direction: column;
-    }
 }
 
 .menu-buttons {
@@ -176,33 +204,27 @@ header {
     }
 
     .menu_buttons__main {
-        padding-right: 16px;
+        padding-right: 1rem;
     }
 }
 
 .reg-buttons {
 
-    @media (max-width: 700px) {
-        .reg-buttons-registration {
-            display: none;
-        }
-    }
-
     .reg-buttons-entry {
         font-family: "Mukta", sans-serif;
         color: #EEF8FB;
-        width: 75px;
-        height: 32px;
+        width: 75px / 16px * 1rem;
+        height: 32px / 16px * 1rem;
         background-color: #0078D2;
         border: 4px solid #0078D2;
         border-radius: 4px;
-        margin-right: 16px;
+        margin-right: 1rem;
     }
 
     .reg-buttons-registration {
         font-family: "Mukta", sans-serif;
         color: #EEF8FB;
-        width: 120px;
+        width: 120px / 16px * 1rem;
         border: 4px solid #00487E;
         border-radius: 4px;
         background-color: #00487E;
@@ -214,7 +236,7 @@ header {
     flex-direction: row;
 
     .avatar-name {
-        margin-left: 14px;
+        margin-left: 14px / 16px * 1rem;
         font-family: "Mukta", sans-serif;
         color: #EEF8FB;
     }
@@ -223,17 +245,17 @@ header {
 // рекомендуем!
 
 main {
-    padding: 30px 0;
+    padding: 30px / 16px * 1rem 0;
     background-color: #002033;
 }
 
 .recommendation {
     @extend %flex-center;
     flex-direction: column;
-    padding-bottom: 100px;
+    padding-bottom: 100px / 16px * 1rem;
 
     .headline {
-        padding-bottom: 30px;
+        padding-bottom: 30px / 16px * 1rem;
     }
 
     .recommendation__table {
@@ -246,17 +268,17 @@ main {
         }
 
         thead {
-            font-size: 12px;
+            font-size: 12px / 16px * 1rem;
             text-align: left;
 
             tr th {
                 &::first-letter {
-                    padding-left: 5px;
+                    padding-left: 12px / 16px *1rem;
                 }
 
                 &:last-child {
                     padding-right: 0px;
-                    width: min(20vw, 230px);
+                    width: min(20vw, 230px / 16px * 1rem);
                 }
             }
         }
@@ -270,7 +292,7 @@ main {
         tbody {
             tr {
                 width: 100%;
-                height: 37px;
+                height: 37px / 16px * 1rem;
 
                 &:nth-child(odd) {
                     background-color: rgba(246, 251, 253, 0.05);
@@ -278,7 +300,7 @@ main {
 
                 th {
                     padding-right: min(5vh, 40px);
-                    padding-left: 5px;
+                    padding-left: 5px / 16px * 1rem;
                     height: 100%;
                     text-align: left;
 
@@ -286,14 +308,14 @@ main {
                         display: flex;
                         justify-content: end;
                         align-items: center;
-                        padding-right: 5px;
+                        padding-right: 5px / 16px * 1rem;
                     }
 
                     button {
-                        height: 24px;
-                        font-size: 12px;
-                        padding: 0 4px;
-                        margin-right: 10px;
+                        height: 24px / 16px * 1rem;
+                        font-size: 12px / 16px * 1rem;
+                        padding: 0 4px / 16px * 1rem;
+                        margin-right: 10px / 16px * 1rem;
                         background-color: #2563EB;
                         border: 4px solid #2563EB;
                         border-radius: 4px;
@@ -321,12 +343,12 @@ main {
 
 [class ^="reg-menu__"] {
     @extend %flex-center;
-    padding-bottom: 10px;
+    padding-bottom: 10px / 16px * 1rem;
     flex-flow: column wrap;
 
     input {
         display: block;
-        margin: 5px;
+        margin: 5px / 16px * 1rem;
     }
 
     span:last-child {
@@ -345,14 +367,10 @@ main {
 
 .menu {
     background-color: #001A29;
-    border-radius: min(4vw, 50px);
-    margin: 0 min(6vw, 160px);
-    padding: 15px 0px;
+    border-radius: min(4vw, 50px / 16px * 1rem);
+    margin: 0 min(6vw, 160px / 16px * 1rem);
+    padding: 15px / 16px * 1rem 0px;
     font-family: 'Titillium Web', sans-serif;
-
-    @media (max-width: 500px) {
-        margin: 0;
-    }
 
     .menu__headline {
         @extend %flex-center;
@@ -366,7 +384,7 @@ main {
     }
 
     .menu__item {
-        width: min(65vw, 420px);
+        width: min(65vw, 420px / 16px * 1rem);
         background-color: #0C2B3D;
         box-shadow: 0px 2px 2px rgba(0, 32, 51, 0.02), 0px 2px 8px rgba(0, 32, 51, 0.16);
         border-radius: 4px;
@@ -377,7 +395,7 @@ main {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 32px;
+        margin-bottom: 32px / 16px * 1rem;
         color: #EEF8FB;
     }
 
@@ -390,40 +408,40 @@ main {
     .menu__ping {
         span:first-child {
             color: #7F8CA9;
-            font-size: 11px;
+            font-size: 11px / 16px * 1rem;
         }
     }
 
     .vuz-logo {
-        width: 100px;
-        height: 100px;
+        width: 100px / 16px * 1rem;
+        height: 100px / 16px * 1rem;
     }
 
     .ping-bar {
-        padding: 10px;
+        padding: 10px / 16px * 1rem;
     }
 
     .ping-bar__item {
-        width: min(1.2vw, 10px);
-        height: 40px;
+        width: min(1.2vw, 10px / 16px * 1rem);
+        height: 40px / 16px * 1rem;
     }
 
     .line {
         height: 1.5px;
-        width: min(53vw, 340px);
-        margin-top: 10px;
+        width: min(53vw, 340px / 16px * 1rem);
+        margin-top: 10px / 16px * 1rem;
         background-color: #2E4984;
     }
 
     .menu__buttons {
         @extend %flex-center;
-        padding-top: 15px;
+        padding-top: 15px / 16px * 1rem;
         gap: 5px;
 
         button:first-child {
             @extend %flex-center;
-            width: 30px;
-            height: 30px;
+            width: 30px / 16px * 1rem;
+            height: 30px / 16px * 1rem;
             border: none;
             border-radius: 4px;
             background-color: #D09C17;
@@ -431,8 +449,8 @@ main {
 
         button:nth-child(2) {
             @extend %flex-center;
-            width: 120px;
-            height: 30px;
+            width: 120px / 16px * 1rem;
+            height: 30px / 16px * 1rem;
             border: none;
             border-radius: 4px;
             background-color: #2563EB;
@@ -441,8 +459,8 @@ main {
 
         button:last-child {
             @extend %flex-center;
-            width: 30px;
-            height: 30px;
+            width: 30px / 16px * 1rem;
+            height: 30px / 16px * 1rem;
             border: none;
             border-radius: 4px;
             background-color: #ED4546;
@@ -456,17 +474,13 @@ main {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 50px min(6vw, 160px);
-    padding: 80px;
-    padding-left: min(8vw, 80px);
+    margin: 50px min(6vw, 160px / 16px * 1rem);
+    padding: 80px / 16px * 1rem;
+    padding-left: min(8vw, 80px / 16px * 1rem);
     background-color: #001A29;
     color: #EEF8FB;
     border-radius: 50px;
     font-family: "Montserrat", sans-serif;
-
-    @media (max-width:1330px) {
-        flex-direction: column;
-    }
 
     section {
         display: flex;
@@ -479,18 +493,18 @@ main {
     }
 
     .avatar-icon {
-        margin-right: 5px;
+        margin-right: 5px / 16px * 1rem;
     }
 
     .cabinet__private-info,
     .cabinet__contacts {
-        margin-bottom: 40px;
+        margin-bottom: 40px / 16px * 1rem;
     }
 
     .cabinet__headlines {
         display: block;
-        margin-bottom: 24px;
-        font-size: 32px;
+        margin-bottom: 24px / 16px * 1rem;
+        font-size: 32px / 16px * 1rem;
         font-family: "Montserrat", sans-serif;
         font-weight: 900;
     }
@@ -499,10 +513,6 @@ main {
         display: flex;
         flex-direction: row;
         justify-content: start;
-
-        @media (max-width:1000px) {
-            flex-direction: column;
-        }
     }
 
     [class ^="cabinet__form-"] {
@@ -511,15 +521,15 @@ main {
         flex-direction: column;
 
         span {
-            padding-left: 15px;
-            font-size: 24px;
+            padding-left: 15px / 16px * 1rem;
+            font-size: 24px / 16px * 1rem;
             font-weight: 400;
         }
     }
 
     .cabinet__form-name,
     .cabinet__form-mail {
-        margin-right: 80px;
+        margin-right: 80px / 16px * 1rem;
     }
 
     .cabinet__input {
@@ -527,17 +537,17 @@ main {
         display: flex;
         justify-content: start;
         align-items: center;
-        width: min(max(20vw, 260px), 320px);
-        height: 40px;
+        width: min(max(20vw, 260px / 16px * 1rem), 320px / 16px * 1rem);
+        height: 40px / 16px * 1rem;
         border: 2px solid #006AA9;
         border-radius: 4px;
 
         input {
             width: 85%;
             height: 100%;
-            padding-left: 16px;
+            padding-left: 16px / 16px * 1rem;
             border: none;
-            font-size: 12px;
+            font-size: 12px / 16px * 1rem;
             color: #EEF8FB;
             background-color: inherit;
             outline: 0;
@@ -553,7 +563,7 @@ main {
         position: absolute;
         width: max(100px, 25%);
         left: 65.5%;
-        height: 44px;
+        height: 44px / 16px * 1rem;
         background-color: #0F9FFF;
         border: 1px solid #0F9FFF;
         border-radius: 4px;
@@ -564,7 +574,7 @@ main {
         position: absolute;
         width: max(94px, 25%);
         left: 68.5%;
-        height: 44px;
+        height: 44px / 16px * 1rem;
         background-color: #ED4546;
         border: 1px solid #ED4546;
         border-radius: 4px;
@@ -572,29 +582,29 @@ main {
     }
 
     .cabinet__sub {
-        width: 290px;
+        width: 290px / 16px * 1rem;
     }
 
     .cabinet__sub-menu {
-        padding-top: 20px;
+        padding-top: 20px / 16px * 1rem;
         background: #002033;
         border: 1px solid rgba(246, 251, 253, 0.28);
         box-shadow: 0px 4px 4px rgba(0, 3, 6, 0.08), 0px 8px 24px rgba(0, 3, 6, 0.32);
-        border-radius: 4px;
+        border-radius: 4px / 16px * 1rem;
 
         span:first-child {
             display: block;
-            padding: 0px 0px 13px 13px;
-            padding-bottom: 20px;
-            font-size: 14px;
+            padding: 0px 0px 13px / 16px * 1rem 13px / 16px * 1rem;
+            padding-bottom: 20px / 16px * 1rem;
+            font-size: 14px / 16px * 1rem;
             font-family: 'Montserrat', sans-serif;
             color: rgba(246, 251, 253, 0.6);
         }
 
         .line {
-            width: 265px;
+            width: 265px / 16px * 1rem;
             height: 1px;
-            margin: 0 auto 15px auto;
+            margin: 0 auto 15px / 16px * 1rem auto;
             background: rgba(246, 251, 253, 0.28);
         }
     }
@@ -603,18 +613,18 @@ main {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-left: 8px;
-        margin-bottom: 32px;
-        font-size: 18px;
+        margin-left: 8px / 16px * 1rem;
+        margin-bottom: 32px / 16px * 1rem;
+        font-size: 18px / 16px * 1rem;
     }
 
     .cabinet__sub-delete {
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        width: 24px;
-        height: 24px;
-        margin-right: 4px;
+        width: 24px / 16px * 1rem;
+        height: 24px / 16px * 1rem;
+        margin-right: 4px / 16px * 1rem;
         background-color: #ED4546;
         border: none;
         border-radius: 4px;
@@ -629,20 +639,20 @@ main {
     .disturb-checkbox {
         display: flex;
         align-items: center;
-        width: 28px;
-        height: 16px;
-        margin-left: 9px;
-        margin-right: 12px;
+        width: 28px / 16px * 1rem;
+        height: 16px / 16px * 1rem;
+        margin-left: 9px / 16px * 1rem;
+        margin-right: 12px / 16px * 1rem;
         border: 1px solid rgba(246, 251, 253, 0.24);
-        border-radius: 100px;
+        border-radius: 100rem;
     }
 
     .disturb-checkbox__circle {
-        width: 12px;
-        height: 12px;
-        margin: 2px;
+        width: 12px / 16px * 1rem;
+        height: 12px / 16px * 1rem;
+        margin: 2px / 16px * 1rem;
         background-color: rgba(246, 251, 253, 0.24);
-        border-radius: 100px;
+        border-radius: 100rem;
         transition: 0.5s all ease;
     }
 
@@ -658,7 +668,7 @@ main {
 
     .cabinet__warning {
         display: block;
-        margin: 24px 13px;
+        margin: 24px / 16px * 1rem 13px / 16px * 1rem;
         color: #ED4546;
         text-align: center;
     }
@@ -669,39 +679,39 @@ main {
 .monitoring {
     display: flex;
     flex-flow: row wrap;
-    margin: 50px min(6vw, 160px);
-    padding: 50px min(3vw, 120px);
+    margin: 50px min(6vw, 160px / 16px * 1rem);
+    padding: 50px min(3vw, 120px / 16px * 1rem);
     background-color: #001A29;
     color: #EEF8FB;
     border-radius: 50px;
     font-family: "Montserrat", sans-serif;
 
     .monitoring__info {
-        min-width: 310px;
-        margin-right: min(10vw, 120px);
+        min-width: 310px / 16px * 1rem;
+        margin-right: min(10vw, 120px / 16px * 1rem);
     }
 
     .vuz-logo {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 20px;
+        width: 150px / 16px * 1rem;
+        height: 150px / 16px * 1rem;
+        margin-bottom: 20px / 16px * 1rem;
     }
 
     .monitoring__name {
         font-family: "Mukta", sans-serif;
-        font-size: 32px;
+        font-size: 32px / 16px * 1rem;
     }
 
     .monitoring__rate,
     .monitoring__region,
     .monitoring__time {
         span:first-child {
-            font-size: 18px;
+            font-size: 18px / 16px * 1rem;
             color: #7F8CA9;
         }
 
         span:last-child {
-            font-size: 24px;
+            font-size: 24px / 16px * 1rem;
             font-weight: 700;
         }
     }
@@ -709,26 +719,26 @@ main {
     .monitoring__buttons {
         display: flex;
         flex-direction: column;
-        margin: 24px 0;
+        margin: 24px / 16px * 1rem 0;
 
         button {
-            padding: 0px 24px;
+            padding: 0px 24px / 16px * 1rem;
             border: none;
             border-radius: 4px;
-            font-size: 18px;
+            font-size: 18px / 16px * 1rem;
             color: #EEF8FB;
         }
 
         .monitoring__problem {
             width: fit-content;
-            height: 48px;
-            margin-bottom: 20px;
+            height: 48px / 16px * 1rem;
+            margin-bottom: 20px / 16px * 1rem;
             background-color: #ED4546;
         }
 
         .monitoring__report {
             width: fit-content;
-            height: 48px;
+            height: 48px / 16px * 1rem;
             background-color: #D09C17;
 
         }
@@ -738,8 +748,8 @@ main {
     .monitoring__ping-report {
         &>span:first-child {
             font-family: "Mukta", sans-serif;
-            font-size: 32px;
-            padding: 0 min(3vw, 24px);
+            font-size: 32px / 16px * 1rem;
+            padding: 0 min(3vw, 24px / 16px * 1rem);
         }
     }
 
@@ -752,11 +762,11 @@ main {
 
     .ping-bar {
         margin: 0 min(3vw, 24px);
-        padding: 24px min(1.5vw, 64px) 10px min(1.5vw, 64px);
+        padding: 24px / 16px * 1rem min(1.5vw, 64px / 16px * 1rem) 10px / 16px * 1rem min(1.5vw, 64px / 16px * 1rem);
     }
 
     .ping-bar__state {
-        max-width: 672px;
+        max-width: 672px / 16px * 1rem;
         width: 40vw;
     }
 
@@ -765,39 +775,210 @@ main {
         overflow-x: auto;
     }
 
-    @media (max-width:633px) {
-        .ping-bar__state {
-            padding-left: 5px;
-        }
-    }
-
     .ping-bar__item {
-        width: min(1vw, 14px);
-        height: 80px;
-
-        @media (max-width:900px) {
-            height: 40px;
-        }
-
-        @media (max-width:1200px) {
-            height: 60px;
-        }
+        min-width: 4px;
+        width: min(1vw, 14px / 16px * 1rem);
+        height: 80px / 16px * 1rem;
     }
 
     .line {
-        max-width: 680px;
+        max-width: 680px / 16px * 1rem;
         width: 41vw;
         height: 2px;
-        margin-top: 17px;
+        margin-top: 17px / 16px * 1rem;
         background-color: #2E4984;
     }
 
     .uptime,
     .reports {
-        height: 28px;
+        height: 28px / 16px * 1rem;
+    }
+}
+
+.comment {
+    background: rgba(0, 22, 35, 0.85);
+
+    .comment__write {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 0 min(9vw, 385px / 16px * 1rem) 60px / 16px * 1rem;
+        gap: 30px;
+        background-color: #002033;
+    }
+
+    .comment__textarea {
+        background-color: #0C2B3D;
+        border: 1px solid rgba(246, 251, 253, 0.16);
+        border-radius: 4px;
+    }
+
+    .comment__textarea-write {
+        width: 45vw;
+        max-width: 900px / 16px * 1rem;
+        padding: 11px / 16px * 1rem 13px / 16px * 1rem;
+        border: none;
+        background-color: #0C2B3D;
+        color: #EEF8FB;
+        resize: none;
+        outline: 0;
+        outline-offset: 0;
+
+        &::placeholder {
+            color: rgba(246, 251, 253, 0.35);
+        }
+    }
+
+    .comment__buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .comment__send {
+        @extend %flex-center;
+        width: 154px / 16px * 1rem;
+        height: 48px / 16px * 1rem;
+        border: none;
+        padding: 0 24px / 16px * 1rem;
+        margin-top: 20px / 16px * 1rem;
+        font-size: 18px;
+        background-color: #0F9FFF;
+        color: #EEF8FB;
+    }
+
+    .comment__users {
+        margin: 40px / 16px * 1rem 0;
+        padding: 0 min(9vw, 385px / 16px * 1rem) 60px / 16px * 1rem;
+    }
+
+    .comment__user {
+        display: flex;
+        flex-direction: row;
+        margin-left: 5px / 16px * 1rem;
+    }
+
+    .comment__user-avatar {
+        width: 64px / 16px * 1rem;
+        height: 64px / 16px * 1rem;
+        background-color: #C3F07F;
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .comment__user-info {
+        display: flex;
+        flex-direction: column;
+        margin-left: 11px / 16px * 1rem;
+        font-size: 18px / 16px * 1rem;
+        font-family: "Mukta", sans-serif;
+        color: #EEF8FB;
+    }
+
+    .comment__user-mark {
+        span:first-child {
+            font-size: 1rem;
+            color: #7F8CA9
+        }
+
+        span:last-child {
+            font-size: 20px / 16px * 1rem;
+        }
+    }
+
+    .comment__user-text {
+        min-height: 100px / 16px * 1rem;
+        margin: 16px 0px;
+        padding: 10px;
+        box-shadow: 0px 8px 8px rgba(0, 3, 6, 0.08), 0px 12px 28px rgba(0, 3, 6, 0.32);
+        border-radius: 4px;
+        font-family: "Mukta", sans-serif;
+        font-size: 15px / 16px * 1rem;
+        background-color: #002033;
+        color: #EEF8FB
     }
 }
 
 .show {
     display: none !important;
+}
+
+
+// медиа запросы и адаптив
+
+@media (min-width:2200px) {
+    html {
+        width: 100% !important;
+        ;
+        height: 100% !important;
+        ;
+        font-size: calc(16px + 0.2vw) !important;
+        ;
+    }
+}
+
+@media (max-width:1250px) {
+    .logo .logo__text span {
+        display: none !important;
+    }
+
+    .cabinet {
+        flex-direction: column !important;
+        ;
+
+        .cabinet__forms {
+            flex-direction: column !important;
+            ;
+        }
+    }
+
+    .monitoring .ping-bar__item {
+        height: 60px !important;
+        ;
+    }
+}
+
+@media (max-width:992px) {
+    .monitoring .ping-bar__item {
+        height: 40px !important;
+        ;
+    }
+
+    .comment__textarea-write {
+        width: 70vw !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .logo {
+        padding-right: 10px !important;
+        ;
+    }
+
+    .menu-buttons,
+    .reg-buttons {
+        flex-direction: column !important;
+        ;
+    }
+
+    .reg-buttons .reg-buttons-registration {
+        display: none !important;
+        ;
+    }
+
+    .menu {
+        margin: 0 !important;
+    }
+
+    .monitoring .ping-bar__state {
+        padding-left: 5px / 16px * 1rem !important;
+        ;
+
+    }
+
+    .cabinet * {
+        margin-right: 0 !important;
+    }
 }
