@@ -1089,24 +1089,23 @@ footer {
             display: none;
         }
     }
-}
 
-.reg-buttons {
-    flex-direction: column !important;
-}
+    .reg-buttons {
+        flex-direction: column !important;
+    }
 
-.reg-buttons .reg-buttons-registration {
-    display: none !important;
-}
+    .reg-buttons .reg-buttons-registration {
+        display: none !important;
+    }
 
-.menu {
-    margin: 0 !important;
-}
+    .menu {
+        margin: 0 !important;
+    }
 
-.monitoring .ping-bar__state {
-    padding-left: 5px / 16px * 1rem !important;
-    ;
+    .monitoring .ping-bar__state {
+        padding-left: 5px / 16px * 1rem !important;
 
+    }
 }
 
 .cabinet * {

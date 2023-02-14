@@ -1110,25 +1110,6 @@ footer {
     width: 70vw !important;
   }
 }
-.reg-buttons {
-  -webkit-box-orient: vertical !important;
-  -webkit-box-direction: normal !important;
-      -ms-flex-direction: column !important;
-          flex-direction: column !important;
-}
-
-.reg-buttons .reg-buttons-registration {
-  display: none !important;
-}
-
-.menu {
-  margin: 0 !important;
-}
-
-.monitoring .ping-bar__state {
-  padding-left: 0.3125rem !important;
-}
-
 .cabinet * {
   margin-right: 0 !important;
 }
@@ -1156,6 +1137,21 @@ footer {
   }
   .menu-buttons .line {
     display: none;
+  }
+  .reg-buttons {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  .reg-buttons .reg-buttons-registration {
+    display: none !important;
+  }
+  .menu {
+    margin: 0 !important;
+  }
+  .monitoring .ping-bar__state {
+    padding-left: 0.3125rem !important;
   }
   .logo {
     padding-right: 10px !important;
@@ -1220,6 +1216,21 @@ footer {
   }
   .menu-buttons .line {
     display: none;
+  }
+  .reg-buttons {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  .reg-buttons .reg-buttons-registration {
+    display: none !important;
+  }
+  .menu {
+    margin: 0 !important;
+  }
+  .monitoring .ping-bar__state {
+    padding-left: 0.3125rem !important;
   }
   .logo__icon {
     display: none;
