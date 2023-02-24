@@ -10,9 +10,8 @@
 }
 
 html {
-    width: 100%;
-    height: 100%;
     background-color: #002033;
+    padding: 0px;
 }
 
 span,
@@ -24,6 +23,12 @@ tr {
 
 button {
     cursor: pointer;
+}
+
+
+input {
+    outline: 0;
+    outline-offset: 0;
 }
 
 .avatar-icon {
@@ -158,6 +163,18 @@ button {
     }
 }
 
+
+.moderation {
+    width: 170px /16px * 1rem;
+    height: 60px /16px * 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px / 16px * 1rem;
+    color: #EEF8FB;
+    background-color: #D09C17;
+}
+
 // header
 
 header {
@@ -182,8 +199,6 @@ header {
         border-radius: 4px;
         background-color: #002033;
         color: #EEF8FB;
-        outline: 0;
-        outline-offset: 0;
 
         &::placeholder {
             color: rgba(246, 251, 253, 0.35);
@@ -317,27 +332,24 @@ header {
     }
 }
 
-.reg-buttons {
+.reg-buttons-entry {
+    font-family: "Mukta", sans-serif;
+    color: #EEF8FB;
+    width: 75px / 16px * 1rem;
+    height: 32px / 16px * 1rem;
+    background-color: #0078D2;
+    border: 4px solid #0078D2;
+    border-radius: 4px;
+    margin-right: 1rem;
+}
 
-    .reg-buttons-entry {
-        font-family: "Mukta", sans-serif;
-        color: #EEF8FB;
-        width: 75px / 16px * 1rem;
-        height: 32px / 16px * 1rem;
-        background-color: #0078D2;
-        border: 4px solid #0078D2;
-        border-radius: 4px;
-        margin-right: 1rem;
-    }
-
-    .reg-buttons-registration {
-        font-family: "Mukta", sans-serif;
-        color: #EEF8FB;
-        width: 120px / 16px * 1rem;
-        border: 4px solid #00487E;
-        border-radius: 4px;
-        background-color: #00487E;
-    }
+.reg-buttons-registration {
+    font-family: "Mukta", sans-serif;
+    color: #EEF8FB;
+    width: 120px / 16px * 1rem;
+    border: 4px solid #00487E;
+    border-radius: 4px;
+    background-color: #00487E;
 }
 
 .avatar {
@@ -415,6 +427,7 @@ main {
 
                     &:last-child {
                         display: flex;
+                        height: 37px / 16px * 1rem;
                         justify-content: end;
                         align-items: center;
                         padding-right: 5px / 16px * 1rem;
@@ -441,6 +454,16 @@ main {
 .reg-menu {
     @extend %flex-center;
     flex-flow: column wrap;
+    width: 80vw;
+    margin: auto;
+    margin-top: 30px;
+    box-shadow: 0px 8px 8px rgba(0, 3, 6, 0.08), 0px 12px 28px rgba(0, 3, 6, 0.32);
+    background-color: #001A29;
+    color: #EEF8FB;
+
+    .reg-buttons-entry {
+        width: fit-content;
+    }
 }
 
 
@@ -448,11 +471,14 @@ main {
 .reg-menu span {
     display: block;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px;
 }
 
 [class ^="reg-menu__"] {
     @extend %flex-center;
     padding-bottom: 10px / 16px * 1rem;
+    gap: 15px;
     flex-flow: column wrap;
 
     input {
@@ -472,6 +498,10 @@ main {
 
 }
 
+.reg-menu__entry .reg-buttons-entry {
+    padding: 0 10px / 16px * 1rem;
+}
+
 // Доступные сайты!
 
 .menu {
@@ -484,6 +514,42 @@ main {
     .menu__headline {
         @extend %flex-center;
         flex-direction: column;
+    }
+
+    .menu__headline-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin: 20px / 16px * 1rem 0 76px / 16px * 1rem 0;
+
+        input {
+            width: calc(min(7vw, 3rem)*11);
+            height: 60px / 16px * 1rem;
+            background: #002033;
+            border: 1px solid rgba(246, 251, 253, 0.44);
+            border-radius: 4px;
+            color: #EEF8FB;
+
+            &::placeholder {
+                color: rgba(246, 251, 253, 0.35);
+            }
+        }
+    }
+
+    .moderation,
+    .add-site {
+        margin: 0 7vw;
+    }
+
+    .add-site {
+        width: 170px / 16px *1rem;
+        height: 60px / 16px * 1rem;
+        border-radius: 4px;
+        border: none;
+        font-size: 20px / 16px * 1rem;
+        background: #0F9FFF;
+        color: #EEF8FB;
     }
 
     .menu__list {
@@ -663,8 +729,6 @@ main {
             font-size: 12px / 16px * 1rem;
             color: #EEF8FB;
             background-color: inherit;
-            outline: 0;
-            outline-offset: 0;
         }
 
         svg {
@@ -675,7 +739,7 @@ main {
     .cabinet__button-confirm {
         position: absolute;
         width: max(100px, 25%);
-        left: 65.5%;
+        left: 68%;
         height: 44px / 16px * 1rem;
         background-color: #0F9FFF;
         border: 1px solid #0F9FFF;
@@ -686,7 +750,7 @@ main {
     .cabinet__button-deny {
         position: absolute;
         width: max(94px, 25%);
-        left: 68.5%;
+        left: 70%;
         height: 44px / 16px * 1rem;
         background-color: #ED4546;
         border: 1px solid #ED4546;
@@ -1023,6 +1087,128 @@ footer {
     display: none !important;
 }
 
+//Блоки из js
+.dark-bg {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.offer-site,
+.moderation-menu {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 85vw;
+    min-width: 320px;
+    max-width: 1200px / 16px * 1rem;
+    padding-top: 10px / 16px * 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 30px;
+    background: #001A29;
+}
+
+.offer-site__inputs,
+.moderation-menu__inputs {
+    @extend %flex-center;
+    flex-flow: row wrap;
+    z-index: 3;
+    gap: 30px / 16px * 1rem;
+    margin: 20px / 16px * 1rem 0px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    width: 320px / 16px * 1rem;
+    height: 30px / 16px * 1rem;
+    border: 2px solid #006AA9;
+    border-radius: 4px;
+    padding-right: 5px / 16px * 1rem;
+
+    input {
+        width: 95%;
+        height: 20px / 16px * 1rem;
+        margin-right: 5px / 16px * 1rem;
+        padding-left: 8px / 16px * 1rem;
+        border: none;
+        background-color: #001A29;
+        color: #EEF8FB;
+    }
+}
+
+.input-headline {
+    font-size: 24px / 16px * 1rem;
+    font-family: "Montserrat", sans-serif;
+    color: #EEF8FB;
+}
+
+.offer-site__buttons,
+.moderation-menu__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px / 16px * 1rem;
+    flex-flow: row wrap;
+    margin-bottom: 1rem;
+}
+
+@mixin button($color) {
+    border: none;
+    border-radius: 4px;
+    padding: 10px / 16px * 1rem 24px / 16px * 1rem;
+    font-size: 18px / 16px * 1rem;
+    background: $color;
+    color: #EEF8FB;
+}
+
+.button-sent {
+    @include button(#0F9FFF);
+}
+
+.button-add {
+    @include button(#3BA55C);
+}
+
+.button-close {
+    @include button(#ED4546);
+}
+
+.moderation-menu__title {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    .headline {
+        display: flex;
+        justify-content: end;
+        width: 60%;
+    }
+
+    div:last-child {
+        display: flex;
+        justify-content: end;
+        width: 30%;
+    }
+}
+
+.moderation-menu__item {
+    border-radius: 4px;
+    margin: 0 5%;
+    background: #002033;
+    box-shadow: 0px 8px 8px rgba(0, 3, 6, 0.08), 0px 12px 28px rgba(0, 3, 6, 0.32);
+
+    input {
+        background: #002033;
+    }
+}
 
 // медиа запросы и адаптив
 
@@ -1048,6 +1234,11 @@ footer {
             height: 60px !important;
         }
     }
+
+    .site-menu__wrapper,
+    .add-moderation__item {
+        flex-direction: column !important;
+    }
 }
 
 @media (max-width:992px) {
@@ -1057,6 +1248,19 @@ footer {
 
     .comment__textarea-write {
         width: 70vw !important;
+    }
+
+    .menu__headline-buttons {
+        justify-content: center;
+        flex-direction: column;
+
+        button:first-child {
+            order: 2;
+        }
+
+        .add-site {
+            margin: 10px;
+        }
     }
 }
 
@@ -1106,10 +1310,11 @@ footer {
         padding-left: 5px / 16px * 1rem !important;
 
     }
-}
 
-.cabinet * {
-    margin-right: 0 !important;
+
+    .cabinet * {
+        margin-right: 0 !important;
+    }
 }
 
 @media (max-width: 767px) {

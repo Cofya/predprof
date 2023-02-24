@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Actor&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="test.css">
+    <title>Личный кабинет</title>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <div class="logo__icon">
+                <img src="images/icon.png" alt="иконка" width="60" height="60px">
+            </div>
+            <div class="logo__text">
+                <span>VUZDETECTOR</span> <br>
+                <span>мониторинг состояния сайтов вузов</span>
+            </div>
+        </div>
+        <div class="menu-buttons">
+            <div class="menu-buttons__wrapper">
+                <span class="menu-buttons__main" onclick="toMain()">Главная</span>
+                <span class="menu-buttons__cabinet">Личный кабинет</span>
+            </div>
+            <div class="line-wrapper">
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="avatar">
+            <img src="images/icon.png" alt="ава" class="avatar-icon" width="64px" height="64px">
+            <div class="avatar-name">Гоба</div>
+        </div>
+        <div class="search-wrapper">
+            <input type="search" placeholder="Я ищу" class="">
+        </div>
+    </header>
+    <main>
+        <div class="cabinet">
+            <section>
+                <div class="avatar">
+                    <img src="images/icon.png" alt="ава" width="100" height="100" class="avatar-icon">
+                    <img src="images/add.svg" alt="сменить аву">
+                </div>
+                <div class="cabinet__private-info">
+                    <div class="cabinet__headlines">Личная Информация</div>
+
+                    <div class="cabinet__forms">
+                        <form class="cabinet__form-name">
+                            <span class="cabinet__name">Имя</span>
+                            <div class="cabinet__input">
+                                <input id="name" type="text">
+                                <img src="images/delete.svg" alt="">
+
+                            </div>
+                        </form>
+                        <form class="cabinet__form-surname">
+                            <span class="cabinet__surname">Фамилия</span>
+                            <div class="cabinet__input">
+                                <input id="surname" type="text">
+                                <img src="images/delete.svg" alt="">
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="cabinet__contacts">
+                    <div class="cabinet__headlines">Контакты</div>
+                    <div class="cabinet__forms">
+                        <form class="cabinet__form-mail">
+                            <span class="cabinet__mail">Почта</span>
+                            <div class="cabinet__input">
+                                <input id="mail" type="text">
+                                <button class="cabinet__button-confirm">ПОДТВЕРДИТЬ</button>
+                                <button class="cabinet__button-deny show">ОТВЯЗАТЬ</button>
+                            </div>
+                        </form>
+                        <form class="cabinet__form-telegram">
+                            <span class="cabinet__telegram">Телеграм</span>
+                            <div class="cabinet__input">
+                                <input id="telegram" type="text">
+                                <button class="cabinet__button-confirm show">ПОДТВЕРДИТЬ</button>
+                                <button class="cabinet__button-deny">ОТВЯЗАТЬ</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cabinet__sub">
+                <div class="cabinet__headlines">Мои подписки</div>
+                <div class="cabinet__sub-menu">
+                    <span>УВЕДОМЛЕНИЯ</span>
+                    <div class="line"></div>
+                    <div class="cabinet__sub-item">
+                        <div>
+                            <button class="cabinet__sub-delete">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="fff"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+                                        fill="#C5CFD4" />
+                                </svg>
+
+                            </button>
+                            <img src="images/empty.svg" alt="нет" class="empty-svg show">
+                            <span>МГТУ им. Баумана</span>
+                        </div>
+                        <div class="cabinet__checkbox-wrapper">
+                            <img src="images/moon.svg" alt="луна">
+                            <!-- свг код слишком большой теперь я буду делать так-->
+                            <div class="disturb-checkbox active">
+                                <div class="disturb-checkbox__circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cabinet__sub-item">
+                        <div>
+                            <button class="cabinet__sub-delete">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="fff"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+                                        fill="#C5CFD4" />
+                                </svg>
+
+                            </button>
+                            <img src="images/empty.svg" alt="нет" class="empty-svg show">
+                            <span>НИЯУ МИФИ</span>
+                        </div>
+                        <div class="cabinet__checkbox-wrapper">
+                            <img src="images/moon.svg" alt="луна">
+                            <div class="disturb-checkbox">
+                                <div class="disturb-checkbox__circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cabinet__sub-item">
+                        <div>
+                            <button class="cabinet__sub-delete show">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="fff"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+                                        fill="#C5CFD4" />
+                                </svg>
+
+                            </button>
+                            <img src="images/empty.svg" alt="нет" class="empty-svg">
+                            <span>Пусто</span>
+                        </div>
+                        <div class="cabinet__checkbox-wrapper">
+                            <img src="images/moon.svg" alt="луна">
+                            <div class="disturb-checkbox">
+                                <div class="disturb-checkbox__circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cabinet__sub-item">
+                        <div>
+                            <button class="cabinet__sub-delete show">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="fff"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+                                        fill="#C5CFD4" />
+                                </svg>
+
+                            </button>
+                            <img src="images/empty.svg" alt="нет" class="empty-svg">
+                            <span>Пусто</span>
+                        </div>
+                        <div class="cabinet__checkbox-wrapper">
+                            <img src="images/moon.svg" alt="луна">
+                            <div class="disturb-checkbox">
+                                <div class="disturb-checkbox__circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cabinet__sub-item">
+                        <div>
+                            <button class="cabinet__sub-delete show">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="fff"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+                                        fill="#C5CFD4" />
+                                </svg>
+
+                            </button>
+                            <img src="images/empty.svg" alt="нет" class="empty-svg">
+                            <span>Пусто</span>
+                        </div>
+                        <div class="cabinet__checkbox-wrapper">
+                            <img src="images/moon.svg" alt="луна">
+                            <div class="disturb-checkbox">
+                                <div class="disturb-checkbox__circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cabinet__sub-item">
+                        <div>
+                            <button class="cabinet__sub-delete show">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="fff"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+                                        fill="#C5CFD4" />
+                                </svg>
+
+                            </button>
+                            <img src="images/empty.svg" alt="нет" class="empty-svg">
+                            <span>Пусто</span>
+                        </div>
+                        <div class="cabinet__checkbox-wrapper">
+                            <img src="images/moon.svg" alt="луна">
+                            <div class="disturb-checkbox">
+                                <div class="disturb-checkbox__circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <span class="cabinet__warning">Вы можете добавить до 6-ти</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

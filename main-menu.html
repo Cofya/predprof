@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Actor&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <title>Меню</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo__icon">
+                <img src="images/icon.png" alt="иконка" width="60" height="60px">
+            </div>
+            <div class="logo__text">
+                <span>VUZDETECTOR</span> <br>
+                <span>мониторинг состояния сайтов вузов</span>
+            </div>
+        </div>
+        <div class="menu-buttons">
+            <div class="menu-buttons__wrapper">
+                <span class="menu-buttons__main">Главная</span>
+                <span class="menu-buttons__cabinet" onclick="toCabinet()">Личный кабинет</span>
+            </div>
+            <div class="line-wrapper">
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="avatar">
+            <img src="images/icon.png" alt="ава" class="avatar-icon" width="64px" height="64px">
+            <div class="avatar-name">Гоба</div>
+        </div>
+        <div class="search-wrapper">
+            <input type="search" placeholder="Я ищу" class="">
+        </div>
+    </header>
+
+    <main>
+        <div class="recommendation">
+            <span class="headline">ПОПУЛЯРНЫЕ РЕСУРСЫ</span>
+            <div class="recommendation__table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Название</th>
+                            <th>Регион</th>
+                            <th>Рейтинг</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="line"></div>
+                            </th>
+                            <th>
+                                <div class="line"></div>
+                            </th>
+                            <th>
+                                <div class="line"></div>
+                            </th>
+                            <th>
+                                <div class="line"></div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>МГУ</th>
+                            <th>Москва</th>
+                            <th>4.8</th>
+                            <th>
+                                <button class="recomendation__button">ПЕРЕЙТИ</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>МИРЭА</th>
+                            <th>Москва</th>
+                            <th>4.7</th>
+                            <th>
+                                <button class="recomendation__button">ПЕРЕЙТИ</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>МГТУ им. Баумана</th>
+                            <th>Москва</th>
+                            <th>4.9</th>
+                            <th>
+                                <button class="recomendation__button">ПЕРЕЙТИ</button>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="menu__headline">
+                <div class="headline">ДОСТУПНЫЕ САЙТЫ</div>
+                <div class="menu__headline-buttons">
+                    <button class="admin moderation" onclick="toggleModerationSites()">МОДЕРАЦИЯ</button>
+                    <input type="search" placeholder="Я ищу">
+                    <button class="add-site" onclick="toggleOffer()">ДОБАВИТЬ САЙТ</button>
+                </div>
+            </div>
+            <swiper-container class="mySwiper" pagination="true" pagination-dynamic-bullets="true" navigation="true"
+                style="padding-bottom: 22.5px;">
+                <swiper-slide class="menu__list">
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <div>
+                                <div class="menu__name">
+                                    <span>МГТУ им. Баумана</span>
+                                    <a href="https://bmstu.ru/">https://bmstu.ru/</a>
+                                </div>
+                                <div class="menu__rate">
+                                    <span>Рейтинг:</span>
+                                    <span>4.9</span>
+                                </div>
+                                <div class="menu__region">
+                                    <span>Регион:</span>
+                                    <span>Москва</span>
+                                </div>
+                                <div class="menu__ping">
+                                    <span>Последний пинг:</span>
+                                    <span>1 мин.</span>
+                                </div>
+                            </div>
+                            <div class="vuz-logo">
+                                <img class="" src="images/bauman.png" alt="картиночка">
+                            </div>
+                        </div>
+                        <div class="ping-bar">
+                            <div class="ping-bar__state">
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item yellow"></div>
+                                <div class="ping-bar__item red"></div>
+                                <div class="ping-bar__item yellow"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="uptime">
+                                <span>uptime:</span>
+                                <span>96%</span>
+                            </div>
+                        </div>
+                        <div class="menu__buttons">
+                            <button>
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13 6H10.45V3H7.55V6H5L9 10L13 6ZM16 0H1.99C0.88 0 0 0.9 0 2V16C0 17.1 0.88 18 1.99 18H16C17.1 18 18 17.1 18 16V2C18 0.9 17.1 0 16 0ZM16 16H2V13H5.56C6.25 14.19 7.53 15 9.01 15C10.49 15 11.76 14.19 12.46 13H16V16ZM16 11H11.01C11.01 12.1 10.11 13 9.01 13C7.91 13 7.01 12.1 7.01 11H2L1.99 2H16V11Z"
+                                        fill="white" />
+                                </svg>
+
+                            </button>
+                            <button class="menu__go">ПЕРЕЙТИ</button>
+                            <button>
+                                <svg width="18" height="22" viewBox="0 0 18 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9 0L0 4V10C0 15.55 3.84 20.74 9 22C14.16 20.74 18 15.55 18 10V4L9 0ZM9 10.99H16C15.47 15.11 12.72 18.78 9 19.93V11H2V5.3L9 2.19V10.99Z"
+                                        fill="white" />
+                                </svg>
+
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <div>
+                                <div class="menu__name">
+                                    <span>МГУ</span> <br>
+                                    <a href="">https://international.msu.ru/ru</a>
+                                </div>
+                                <div class="menu__rate">
+                                    <span>Рейтинг:</span>
+                                    <span>4.8</span>
+                                </div>
+                                <div class="menu__region">
+                                    <span>Регион:</span>
+                                    <span>Москва</span>
+                                </div>
+                                <div class="menu__ping">
+                                    <span>Последний пинг:</span>
+                                    <span>1 мин.</span>
+                                </div>
+                            </div>
+                            <img class="vuz-logo" src="images/mgu.png" alt="картиночка"></img>
+                        </div>
+                        <div class="ping-bar">
+                            <div class="ping-bar__state">
+                                <div class="ping-bar__item yellow"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item red"></div>
+                                <div class="ping-bar__item yellow"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item yellow"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="uptime">
+                                <span>uptime:</span>
+                                <span>93%</span>
+                            </div>
+                        </div>
+                        <div class="menu__buttons">
+                            <button>
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13 6H10.45V3H7.55V6H5L9 10L13 6ZM16 0H1.99C0.88 0 0 0.9 0 2V16C0 17.1 0.88 18 1.99 18H16C17.1 18 18 17.1 18 16V2C18 0.9 17.1 0 16 0ZM16 16H2V13H5.56C6.25 14.19 7.53 15 9.01 15C10.49 15 11.76 14.19 12.46 13H16V16ZM16 11H11.01C11.01 12.1 10.11 13 9.01 13C7.91 13 7.01 12.1 7.01 11H2L1.99 2H16V11Z"
+                                        fill="white" />
+                                </svg>
+
+                            </button>
+                            <button class="menu__go">ПЕРЕЙТИ</button>
+                            <button>
+                                <svg width="18" height="22" viewBox="0 0 18 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9 0L0 4V10C0 15.55 3.84 20.74 9 22C14.16 20.74 18 15.55 18 10V4L9 0ZM9 10.99H16C15.47 15.11 12.72 18.78 9 19.93V11H2V5.3L9 2.19V10.99Z"
+                                        fill="white" />
+                                </svg>
+
+                            </button>
+                        </div>
+                    </div>
+                </swiper-slide>
+                <swiper-slide class="menu__list">
+                    <div class="menu__item">
+                        <div class="menu__item-info">
+                            <div>
+                                <div class="menu__name">
+                                    <span>МИРЕА</span> <br>
+                                    <a href="https://www.mirea.ru/">https://www.mirea.ru/</a>
+                                </div>
+                                <div class="menu__rate">
+                                    <span>Рейтинг:</span>
+                                    <span>4.7</span>
+                                </div>
+                                <div class="menu__region">
+                                    <span>Регион:</span>
+                                    <span>МОСКВА</span>
+                                </div>
+                                <div class="menu__ping">
+                                    <span>Последний пинг:</span>
+                                    <span>1 мин.</span>
+                                </div>
+                            </div>
+                            <img class="vuz-logo" src="images/mirea.png" alt="картиночка"></img>
+                        </div>
+                        <div class="ping-bar">
+                            <div class="ping-bar__state">
+                                <div class="ping-bar__item yellow"></div>
+                                <div class="ping-bar__item yellow"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                                <div class="ping-bar__item green"></div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="uptime">
+                                <span>uptime:</span>
+                                <span>99%</span>
+                            </div>
+                        </div>
+                        <div class="menu__buttons">
+                            <button>
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13 6H10.45V3H7.55V6H5L9 10L13 6ZM16 0H1.99C0.88 0 0 0.9 0 2V16C0 17.1 0.88 18 1.99 18H16C17.1 18 18 17.1 18 16V2C18 0.9 17.1 0 16 0ZM16 16H2V13H5.56C6.25 14.19 7.53 15 9.01 15C10.49 15 11.76 14.19 12.46 13H16V16ZM16 11H11.01C11.01 12.1 10.11 13 9.01 13C7.91 13 7.01 12.1 7.01 11H2L1.99 2H16V11Z"
+                                        fill="white" />
+                                </svg>
+
+                            </button>
+                            <button class="menu__go">ПЕРЕЙТИ</button>
+                            <button>
+                                <svg width="18" height="22" viewBox="0 0 18 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9 0L0 4V10C0 15.55 3.84 20.74 9 22C14.16 20.74 18 15.55 18 10V4L9 0ZM9 10.99H16C15.47 15.11 12.72 18.78 9 19.93V11H2V5.3L9 2.19V10.99Z"
+                                        fill="white" />
+                                </svg>
+
+                            </button>
+                        </div>
+                    </div>
+                </swiper-slide>
+            </swiper-container>
+        </div>
+    </main>
+
+    <div class="dark-bg">
+    </div>
+    <div class="offer-site show">
+        <div class="headline">ПРЕДЛОЖИТЬ САЙТ</div>
+        <div class="offer-site__inputs">
+            <div>
+                <div class="input-headline">Название ВУЗА</div>
+                <div class="input-wrapper">
+                    <input type="text">
+                    <img src="images/delete.svg" alt="">
+                </div>
+            </div>
+            <div>
+                <div class="input-headline">Ссылка</div>
+                <div class="input-wrapper">
+                    <input type="text">
+                    <img src="images/delete.svg" alt="">
+                </div>
+            </div>
+            <div>
+                <div class="input-headline">Регион</div>
+                <div class="input-wrapper">
+                    <input type="text">
+                    <img src="images/delete.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="offer-site__buttons">
+            <button class="button-sent" onclick="sentOffer(this)">ОТПРАВИТЬ</button>
+            <button class="button-add admin" onclick="addVuz(this)">ДОБАВИТЬ</button>
+            <button class="button-close" onclick="toggleOffer()">ЗАКРЫТЬ</button>
+        </div>
+    </div>
+    <div class="moderation-menu admin show">
+        <div class="moderation-menu__title">
+            <div class="headline">МОДЕРАЦИЯ</div>
+            <div>
+                <button class="button-close" onclick="toggleModerationSites()">ЗАКРЫТЬ</button>
+            </div>
+        </div>
+        <div class=moderation-menu__list>
+            <div class="moderation-menu__item">
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    <script>
+        document.querySelector(".menu-buttons__main").classList.add("active")
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+</body>
+
+</html>

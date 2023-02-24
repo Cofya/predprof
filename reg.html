@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Actor&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="test.css">
+
+    <title>Регистрация</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo__icon">
+                <img src="images/icon.png" alt="иконка" width="60" height="60px">
+            </div>
+            <div class="logo__text">
+                <span>VUZDETECTOR</span> <br>
+                <span>мониторинг состояния сайтов вузов</span>
+            </div>
+        </div>
+        <div class="menu-buttons">
+            <div class="menu-buttons__wrapper">
+                <span class="menu-buttons__main" onclick="toMain()">Главная</span>
+                <span class="menu-buttons__cabinet" onclick="toCabinet()">Личный кабинет</span>
+            </div>
+        </div>
+        <div class="avatar">
+            <img src="images/icon.png" alt="ава" class="avatar-icon" width="64px" height="64px">
+            <div class="avatar-name">Гоба</div>
+        </div>
+        <div class="search-wrapper">
+            <input type="search" placeholder="Я ищу" class="">
+        </div>
+    </header>
+    <div class="reg-menu">
+        <div class="reg-menu__registration">
+            <span>Регистрация</span>
+            <div class="input-wrapper">
+                <input type="text" id="reg-login" placeholder="Логин">
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="reg-email" placeholder="Почта">
+            </div>
+            <div class="input-wrapper">
+                <input type="text" id="reg-password" placeholder="Пароль">
+            </div>
+            <button class="reg-buttons-registration" onclick="document.location = 'entry.html'">Регистрация</button>
+            <button class="reg-buttons-entry" onclick="document.location = 'entry.html'">Уже
+                зарегистрировались?</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
