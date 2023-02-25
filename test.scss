@@ -1280,16 +1280,6 @@ footer {
     .add-moderation__item {
         flex-direction: column !important;
     }
-}
-
-@media (max-width:992px) {
-    .monitoring .ping-bar__item {
-        height: 40px !important;
-    }
-
-    .textarea-write {
-        width: 70vw !important;
-    }
 
     .menu__headline-buttons {
         justify-content: center;
@@ -1302,6 +1292,16 @@ footer {
         .add-site {
             margin: 10px;
         }
+    }
+}
+
+@media (max-width:992px) {
+    .monitoring .ping-bar__item {
+        height: 40px !important;
+    }
+
+    .textarea-write {
+        width: 70vw !important;
     }
 
     .moderation-menu__title {

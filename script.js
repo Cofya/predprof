@@ -265,14 +265,16 @@ function addComent(elem) {
 
     let text = all.querySelector("textarea").value;
     all.querySelector("textarea").value = "";
-
-    all.querySelector("input").value = "Введите оценку";
-    all.querySelector("input").style.color = "rgba(246, 251, 253, 0.35)";
     let star = all.querySelector("input").value[0];
+    if (star === "В") {
+        return
+    }
     let com = createCom(text, star)
     let div = document.createElement("div")
     div.innerHTML = com
     document.querySelector(".comment__comment").prepend(div)
+    all.querySelector("input").value = "Выберите оценку";
+    all.querySelector("input").style.color = "rgba(246, 251, 253, 0.35)";
 }
 
 // создавалки дивов (реакт на мнималках)
