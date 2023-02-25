@@ -123,7 +123,7 @@
                 <div class="menu__headline-buttons">
                     <button class="admin moderation" onclick="toggleModerationSites()">МОДЕРАЦИЯ</button>
                     <input type="search" placeholder="Я ищу">
-                    <button class="add-site" onclick="toggleOffer()">ДОБАВИТЬ САЙТ</button>
+                    <button class="add-site" onclick="toggleOfferSite()">ДОБАВИТЬ САЙТ</button>
                 </div>
             </div>
             <swiper-container class="mySwiper" pagination="true" pagination-dynamic-bullets="true" navigation="true"
@@ -399,28 +399,28 @@
                 <div class="input-headline">Название ВУЗА</div>
                 <div class="input-wrapper">
                     <input type="text">
-                    <img src="images/delete.svg" alt="">
+                    <img src="images/delete.svg" alt="" onclick="inputClear(this)">
                 </div>
             </div>
             <div>
                 <div class="input-headline">Ссылка</div>
                 <div class="input-wrapper">
                     <input type="text">
-                    <img src="images/delete.svg" alt="">
+                    <img src="images/delete.svg" alt="" onclick="inputClear(this)">
                 </div>
             </div>
             <div>
                 <div class="input-headline">Регион</div>
                 <div class="input-wrapper">
                     <input type="text">
-                    <img src="images/delete.svg" alt="">
+                    <img src="images/delete.svg" alt="" onclick="inputClear(this)">
                 </div>
             </div>
         </div>
         <div class="offer-site__buttons">
             <button class="button-sent" onclick="sentOffer(this)">ОТПРАВИТЬ</button>
             <button class="button-add admin" onclick="addVuz(this)">ДОБАВИТЬ</button>
-            <button class="button-close" onclick="toggleOffer()">ЗАКРЫТЬ</button>
+            <button class="button-close" onclick="toggleOfferSite()">ЗАКРЫТЬ</button>
         </div>
     </div>
     <div class="moderation-menu admin show">

@@ -75,7 +75,7 @@
                             <span class="cabinet__name">Имя</span>
                             <div class="cabinet__input">
                                 <input id="name" type="text">
-                                <img src="images/delete.svg" alt="">
+                                <img src="images/delete.svg" alt="" onclick="inputClear(this)">
 
                             </div>
                         </form>
@@ -83,7 +83,7 @@
                             <span class="cabinet__surname">Фамилия</span>
                             <div class="cabinet__input">
                                 <input id="surname" type="text">
-                                <img src="images/delete.svg" alt="">
+                                <img src="images/delete.svg" alt="" onclick="inputClear(this)">
 
                             </div>
                         </form>
@@ -119,42 +119,15 @@
                     <div class="line"></div>
                     <div class="cabinet__sub-item">
                         <div>
-                            <button class="cabinet__sub-delete">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="fff"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
-                                        fill="#C5CFD4" />
-                                </svg>
-
+                            <button class="cabinet__sub-delete show">
+                                <img src="images/deleteSmall.svg" alt="">
                             </button>
-                            <img src="images/empty.svg" alt="нет" class="empty-svg show">
-                            <span>МГТУ им. Баумана</span>
+                            <img src="images/empty.svg" alt="нет" class="empty-svg">
+                            <span>Пусто</span>
                         </div>
                         <div class="cabinet__checkbox-wrapper">
                             <img src="images/moon.svg" alt="луна">
                             <!-- свг код слишком большой теперь я буду делать так-->
-                            <div class="disturb-checkbox active">
-                                <div class="disturb-checkbox__circle"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cabinet__sub-item">
-                        <div>
-                            <button class="cabinet__sub-delete">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="fff"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
-                                        fill="#C5CFD4" />
-                                </svg>
-
-                            </button>
-                            <img src="images/empty.svg" alt="нет" class="empty-svg show">
-                            <span>НИЯУ МИФИ</span>
-                        </div>
-                        <div class="cabinet__checkbox-wrapper">
-                            <img src="images/moon.svg" alt="луна">
                             <div class="disturb-checkbox">
                                 <div class="disturb-checkbox__circle"></div>
                             </div>
@@ -163,13 +136,7 @@
                     <div class="cabinet__sub-item">
                         <div>
                             <button class="cabinet__sub-delete show">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="fff"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
-                                        fill="#C5CFD4" />
-                                </svg>
-
+                                <img src="images/deleteSmall.svg" alt="">
                             </button>
                             <img src="images/empty.svg" alt="нет" class="empty-svg">
                             <span>Пусто</span>
@@ -184,13 +151,7 @@
                     <div class="cabinet__sub-item">
                         <div>
                             <button class="cabinet__sub-delete show">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="fff"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
-                                        fill="#C5CFD4" />
-                                </svg>
-
+                                <img src="images/deleteSmall.svg" alt="">
                             </button>
                             <img src="images/empty.svg" alt="нет" class="empty-svg">
                             <span>Пусто</span>
@@ -205,13 +166,7 @@
                     <div class="cabinet__sub-item">
                         <div>
                             <button class="cabinet__sub-delete show">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="fff"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
-                                        fill="#C5CFD4" />
-                                </svg>
-
+                                <img src="images/deleteSmall.svg" alt="">
                             </button>
                             <img src="images/empty.svg" alt="нет" class="empty-svg">
                             <span>Пусто</span>
@@ -226,13 +181,22 @@
                     <div class="cabinet__sub-item">
                         <div>
                             <button class="cabinet__sub-delete show">
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="fff"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
-                                        fill="#C5CFD4" />
-                                </svg>
-
+                                <img src="images/deleteSmall.svg" alt="">
+                            </button>
+                            <img src="images/empty.svg" alt="нет" class="empty-svg">
+                            <span>Пусто</span>
+                        </div>
+                        <div class="cabinet__checkbox-wrapper">
+                            <img src="images/moon.svg" alt="луна">
+                            <div class="disturb-checkbox">
+                                <div class="disturb-checkbox__circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cabinet__sub-item">
+                        <div>
+                            <button class="cabinet__sub-delete show">
+                                <img src="images/deleteSmall.svg" alt="">
                             </button>
                             <img src="images/empty.svg" alt="нет" class="empty-svg">
                             <span>Пусто</span>
@@ -252,6 +216,25 @@
     </main>
 
     <script src="script.js"></script>
+
+    <script>
+        let subMenu = [...document.querySelector(".cabinet__sub-menu").children]
+        subMenu = subMenu.splice(2, 6)
+        for (let i = 0; i < 6; i++) {
+            if (activeCheck[i] === 1) {
+                subMenu[i].querySelector(".disturb-checkbox").classList.add("active")
+            }
+        }
+
+        for (let i = 0; i < subsVuz.length; i++) {
+            let span = subMenu[i].document.querySelector("span");
+            span.innerHTML = subsVuz[i];
+            span.style.color = "#EEF8FB";
+
+            subMenu[i].document.querySelector("button").classList.remove("show");
+            subMenu[i].document.querySelector("img").classList.add("show");
+        }
+    </script>
 </body>
 
 </html>

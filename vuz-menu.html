@@ -62,8 +62,14 @@
     <section class="vuz-all-info">
         <div class="monitoring">
             <div class="monitoring__info">
-                <div class="vuz-logo">
-                    <img src="images/bauman.png" alt="лого вуза">
+                <div style="display: flex;  flex-flow: row wrap;">
+                    <div class="vuz-logo">
+                        <img src="images/bauman.png" alt="лого вуза">
+                    </div>
+                    <div class="monitoring__buttons">
+                        <button class="monitoring__sub" onclick="addToSub(this)">ПОДПИСАТЬСЯ</button>
+                        <button class="moderation admin" onclick="toggleModerationSites()">МОДЕРАЦИЯ</button>
+                    </div>
                 </div>
                 <div class="monitoring__name">
                     <span>МГТУ ИМ. БАУМАНА</span>
@@ -81,8 +87,8 @@
                     <span>22:29</span>
                 </div>
                 <div class="monitoring__buttons">
-                    <button class="monitoring__problem">СООБЩИТЬ О ПРОБЛЕМЕ</button>
-                    <button class="monitoring__report">СКАЧАТЬ ОТЧЁТ</button>
+                    <button class="monitoring__problem" onclick="toggleOfferProblems()">СООБЩИТЬ О ПРОБЛЕМЕ</button>
+                    <button class="monitoring__report" onclick="alert('жоский пон')">СКАЧАТЬ ОТЧЁТ</button>
                 </div>
             </div>
 
@@ -196,8 +202,8 @@
         </div>
         <div class="comment">
             <div class="comment__write">
-                <div class="comment__textarea">
-                    <textarea class="comment__textarea-write" placeholder="Введите текст сообщения"></textarea>
+                <div class="textarea-wrapper">
+                    <textarea class="textarea-write" placeholder="Введите текст сообщения"></textarea>
                 </div>
                 <div class="comment__buttons">
                     <div class="dropdown">
@@ -259,6 +265,45 @@
         </div>
     </section>
 
+    <div class="offer-problems show">
+        <div class="headline">СООБЩИТЬ О ПРОБЛЕМЕ</div>
+        <div class="offer-problems__input">
+            <div class="textarea-wrapper">
+                <textarea class="textarea-write" placeholder="Введите текст жалобы"></textarea>
+            </div>
+        </div>
+        <div class="offer-problems__buttons">
+            <button class="button-sent" onclick="sentProblem(this)">ОТПРАВИТЬ</button>
+            <button class="button-close" onclick="toggleOfferProblems()">ЗАКРЫТЬ</button>
+        </div>
+    </div>
+
+    <div class="moderation-menu moderation-problems admin show">
+        <div class="moderation-menu__title">
+            <div class="headline">МОДЕРАЦИЯ ЖАЛОБ</div>
+            <div>
+                <button class="button-close" onclick="toggleModerationSites()">ЗАКРЫТЬ</button>
+            </div>
+        </div>
+        <div class=moderation-menu__list>
+            <div class="moderation-menu__item">
+                <div class="avatar">
+                    <div class="avatar-icon">
+                        <img src="images/icon.png" alt="ава" width="64" height="64">
+                    </div>
+                    <div class="avatar-name">Стукач</div>
+                </div>
+                <div class="textarea-wrapper">
+                    <textarea class="textarea-write"></textarea>
+                </div>
+                <div class="moderation__buttons">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dark-bg">
+    </div>
     <script src="script.js"></script>
     <script>
         document.querySelector(".dropbtn-wrapper").querySelector("img").addEventListener("click", markDrop)

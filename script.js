@@ -1,5 +1,14 @@
 let offers = [];
+let problems = [];
 
+// вот эти две переменные должны на беке быть и при заходе в cabinet.html оттуда получаться
+let subsVuz = []
+let activeCheck = [0, 0, 0, 0, 0, 0]
+
+// на крестик жмяк инпут очистился
+function inputClear(elem) {
+    elem.previousElementSibling.value = ""
+}
 //анимации 
 
 window.onload = function () {
@@ -17,6 +26,17 @@ window.onload = function () {
         button.style.transition = "0.3s all ease-in";
         return;
     }
+
+    if (lastDoc == "" && newDoc == "/cabinet.html") {
+        let button = document.querySelector(".menu-buttons__cabinet");
+        button.style.transition = ""
+        button.classList.add("active")
+        button.style.transition = "0.3s all ease-in";
+        let line = document.querySelector(".menu-buttons").querySelector(".line");
+        line.style.marginLeft = "8.125rem"
+        return;
+    }
+
     let main = document.querySelector(".menu-buttons__main");
     let cabinet = document.querySelector(".menu-buttons__cabinet");
     let line = document.querySelector(".menu-buttons").querySelector(".line");
@@ -42,7 +62,6 @@ window.onload = function () {
         return;
     }
     if (lastDoc == "/main-menu.html" && newDoc == "/cabinet.html") {
-        console.log("лял")
         line.style.animationName = "line-cabinet"
         main.classList.remove("active")
         cabinet.classList.add("active")
@@ -77,14 +96,50 @@ document.querySelectorAll(".menu__go").forEach((elem) => {
 document.querySelectorAll(".disturb-checkbox").forEach((elem) => {
     elem.addEventListener("click", () => {
         elem.classList.toggle("active")
+
+        let cabinetSub = [...document.querySelector(".cabinet__sub-menu").children]
+        cabinetSub = cabinetSub.splice(2, 6)
+        let item = elem.parentElement.parentElement;
+
+        index = cabinetSub.indexOf(item);
+
+        activeCheck[index] = 1
     })
 })
+
+
 // В личном кабинете Пусто делает другим цветом
 document.querySelectorAll(".cabinet__sub-item").forEach((elem) => {
     if (elem.querySelector("button").classList.contains("show")) {
         elem.querySelector("span").style.color = "#7F8CA9"
     }
 })
+
+function addToSub(elem) {
+    subsVuz.push(document.querySelector(".monitoring__name").innerText);
+    let button = document.querySelector(".monitoring__sub");
+    button.innerHTML = "ОТПИСАТЬСЯ";
+    button.style.backgroundColor = "#ED4546";
+    button.onclick = removeFromSub;
+
+    // потом subsVuz идёт на бек и при заходе в кабинет обрабатывается
+    // обработка в cabinet.html внизу там
+}
+
+function removeFromSub() {
+    let button = document.querySelector(".monitoring__sub");
+    button.innerHTML = "ПОДПИСАТЬСЯ";
+    button.style.backgroundColor = "#3BA55C";
+    button.onclick = addToSub;
+    let name = document.querySelector(".monitoring__name").innerText
+    for (let i = 0; i < subsVuz.length; i++) {
+        if (subsVuz[i] === name) {
+            subsVuz.splice(i, 1)
+        }
+    }
+
+    //после этого subsVuz тоже идёт на бек
+}
 // для выставления оценок
 function markDrop() {
     document.getElementById("dropdown__mark").classList.toggle("show");
@@ -98,7 +153,7 @@ function setMark(mark) {
     input.style.color = "#EEF8FB"
 }
 
-// связанное с менюшками на main-menu
+// связанное с менюшками на main-menu и vuz-menu
 function sentOffer(elem) {
     let inputs = elem.parentElement.parentElement.querySelectorAll("input");
 
@@ -112,25 +167,51 @@ function sentOffer(elem) {
     offers.push(createOffer(name, href, region))
 }
 
-function toggleOffer() {
+function sentProblem(elem) {
+    let textarea = elem.parentElement.parentElement.querySelector("textarea");
+    let problem = textarea.value;
+    textarea.value = "";
+    problems.push(createProblem(problem)) //сюда надо ещё аву и ник пользователя
+}
+
+function toggleOfferSite() {
     let offer = document.querySelector(".offer-site");
     offer.classList.toggle("show");
     toggleDarkBg(offer.classList.contains("show"))
 }
 
+function toggleOfferProblems() {
+    let offer = document.querySelector(".offer-problems");
+    offer.classList.toggle("show");
+    toggleDarkBg(offer.classList.contains("show"))
+}
+
 function denyOffer(elem) {
-    let menuItem = elem.parentElement.parentElement
+    let menuItem = elem.parentElement.parentElement;
     let menuList = menuItem.parentElement;
-    offers = offers.splice([...menuList.children].indexOf(menuItem), 1)
+    index = [...menuList.children].indexOf(menuItem)
     elem.parentElement.parentElement.parentElement.removeChild(elem.parentElement.parentElement);
 
+    offers.splice(index, 1)
+}
+
+function denyProblem(elem) {
+    let menuItem = elem.parentElement.parentElement;
+    let menuList = menuItem.parentElement;
+    index = [...menuList.children].indexOf(menuItem)
+    problems.splice(index, 1);
+    elem.parentElement.parentElement.parentElement.removeChild(elem.parentElement.parentElement);
 }
 
 function toggleModerationSites() {
     let modMenu = document.querySelector(".moderation-menu");
     modMenu.classList.toggle("show");
-    modMenu.querySelector(".moderation-menu__list").innerHTML = offers;
-    toggleDarkBg(modMenu.classList.contains("show"))
+    if (document.location.pathname == "/main-menu.html") {
+        modMenu.querySelector(".moderation-menu__list").innerHTML = offers;
+    } else {
+        modMenu.querySelector(".moderation-menu__list").innerHTML = problems;
+    }
+    toggleDarkBg(modMenu.classList.contains("show"));
 }
 
 function addVuz(elem, bool = false) {
@@ -141,10 +222,10 @@ function addVuz(elem, bool = false) {
     let href = inputs[1].value;
     inputs[1].value = "";
     let region = inputs[2].value;
-    inputs[2].value = ""
+    inputs[2].value = "";
 
     let item = createVuzItem(name, href, region);
-    let swiperContainer = document.querySelector('swiper-container')
+    let swiperContainer = document.querySelector('swiper-container');
     swipChildren = swiperContainer.querySelectorAll("swiper-slide");
 
     if ((swipChildren[swipChildren.length - 1]).children.length == 2) {
@@ -154,8 +235,8 @@ function addVuz(elem, bool = false) {
             `<swiper-slide> ${item} </swiper-slide>`
         );
 
-        let slides = document.querySelectorAll("swiper-slide")
-        slides[slides.length - 1].classList.add("menu__list")
+        let slides = document.querySelectorAll("swiper-slide");
+        slides[slides.length - 1].classList.add("menu__list");
     } else {
         let div = document.createElement("div")
         div.innerHTML = item
@@ -299,4 +380,24 @@ function createOffer(name, href, region) {
             <button class="button-close" onclick="denyOffer(this)">ОТКЛОНИТЬ</button>
         </div>
     </div>`
+}
+
+function createProblem(text) { //звучит круто
+    return `
+    <div class="moderation-menu__item">
+        <div class="avatar">
+            <div class="avatar-icon">
+                <img src="images/icon.png" alt="ава" width="64" height="64">
+            </div>
+            <div class="avatar-name">Стукач</div>
+        </div>
+        <div class="textarea-wrapper">
+            <textarea class="textarea-write">${text}</textarea>
+        </div>
+        <div class="moderation-menu__buttons">
+            <button class="button-add" onclick="denyProblem(this)">ДОБАВИТЬ</button> 
+            <button class="button-close" onclick="denyProblem(this)">ОТКЛОНИТЬ</button>
+        </div>
+    </div>`
+    //denyProblem в button-add временная затычка, потом обсудим че с принятой жалобой делать
 }
